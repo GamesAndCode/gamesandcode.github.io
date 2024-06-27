@@ -1,98 +1,2712 @@
-<!doctype html><html itemscope lang=en-us itemtype=http://schema.org/WebPage><head><meta charset=utf-8><title>Random position spawning</title><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=5"><meta name=theme-name content="hugoplate"><link rel="shortcut icon" href=/images/favicon_hub058fa30b9d244e11f7c8a754c47c0c6_3761_32x0_resize_lanczos_3.png type=image/x-icon><link rel=icon href=/images/favicon_hub058fa30b9d244e11f7c8a754c47c0c6_3761_32x0_resize_lanczos_3.png type=image/x-icon><link rel=icon type=image/png sizes=16x16 href=/images/favicon_hub058fa30b9d244e11f7c8a754c47c0c6_3761_16x0_resize_lanczos_3.png><link rel=icon type=image/png sizes=32x32 href=/images/favicon_hub058fa30b9d244e11f7c8a754c47c0c6_3761_32x0_resize_lanczos_3.png><link rel=apple-touch-icon sizes=180x180 href=/images/favicon_hub058fa30b9d244e11f7c8a754c47c0c6_3761_180x0_resize_lanczos_3.png><link rel=manifest href=/manifest.webmanifest><meta name=msapplication-TileColor content="#ddd"><meta name=theme-color content="#ffffff"><base href=https://gameandcode.com/blog/objectspawner/><meta name=generator content="Hugo 0.117.0"><meta name=keywords content="spawn offscreen,unity instantiate,unity instantiate prefab,unity random position,unity spawn object,random screen position,ouside of camera view"><meta name=description content="Learn how to spawn objects on and off the screen in Unity."><meta name=author content="GameAndCode"><meta property="og:image" content="https://gameandcode.com/images/blog/randomPosition/CoverImage.png"><meta name=twitter:image content="https://gameandcode.com/images/blog/randomPosition/CoverImage.png"><meta name=twitter:card content="summary_large_image"><meta property="og:image:width" content="1280"><meta property="og:image:height" content="720"><meta property="og:image:type" content="image/.png"><meta property="og:title" content="Random position spawning"><meta property="og:description" content="Learn how to spawn objects on and off the screen in Unity."><meta property="og:type" content="website"><meta property="og:url" content="https://gameandcode.com/blog/objectspawner/"><meta name=twitter:title content="Random position spawning"><meta name=twitter:description content="Learn how to spawn objects on and off the screen in Unity."><script>let indexURL="https://gameandcode.com/searchindex.json",includeSectionsInSearch=["blog"],no_results_for="No results for",empty_search_results_placeholder="Type something to search.."</script><meta http-equiv=x-dns-prefetch-control content="on"><link rel=preconnect href=https://use.fontawesome.com crossorigin><link rel=preconnect href=//cdnjs.cloudflare.com><link rel=preconnect href=//www.googletagmanager.com><link rel=preconnect href=//www.google-analytics.com><link rel=dns-prefetch href=https://use.fontawesome.com><link rel=dns-prefetch href=//ajax.googleapis.com><link rel=dns-prefetch href=//cdnjs.cloudflare.com><link rel=dns-prefetch href=//www.googletagmanager.com><link rel=dns-prefetch href=//www.google-analytics.com><link rel=dns-prefetch href=//fonts.googleapis.com><link rel=dns-prefetch href=//connect.facebook.net><link rel=dns-prefetch href=//platform.linkedin.com><link rel=dns-prefetch href=//platform.twitter.com><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><script>(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()</script><link href="/css/style.min.781c8e90ff3db63e644d8f55a4ce98e862b547749b27064d089eeef1f2145088.css" integrity="sha256-eByOkP89tj5kTY9VpM6Y6GK1R3SbJwZNCJ7u8fIUUIg=" rel=stylesheet><link href=/plugins/prism/prism.css integrity rel=stylesheet></head><body><header class="header sticky top-0 z-30"><nav class="navbar container"><div class=order-0><a class="navbar-brand block" href=/><img fetchpriority=high decoding=async class="img logo-light" width=120 height=32 src=/images/Logo/GameAndCodeBlack_hub877a85b9be016b499364d6ab8bed62d_118049_240x0_resize_q90_h2_lanczos_3.webp alt="Game and code" onerror='this.onerror=null,this.src="/images/Logo/GameAndCodeBlack_hub877a85b9be016b499364d6ab8bed62d_118049_240x0_resize_lanczos_3.png"'>
-<img fetchpriority=high decoding=async class="img logo-dark" width=120 height=32 src=/images/Logo/GameAndCodeWhite_hub877a85b9be016b499364d6ab8bed62d_70897_240x0_resize_q90_h2_lanczos_3.webp alt="Game and code" onerror='this.onerror=null,this.src="/images/Logo/GameAndCodeWhite_hub877a85b9be016b499364d6ab8bed62d_70897_240x0_resize_lanczos_3.png"'></a></div><input id=nav-toggle type=checkbox class=hidden>
-<label for=nav-toggle class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1"><svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20"><title>Menu Open</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0V0z"/></svg><svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20"><title>Menu Close</title><polygon points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2" transform="rotate(45 10 10)"/></svg></label><ul id=nav-menu class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8"><li class=nav-item><a class=nav-link href=/blog>Blog</a></li><li class=nav-item><a class=nav-link href=/code>Code</a></li><li class=nav-item><a class=nav-link href=/useful-resources>Resources</a></li><li class=nav-item><a class=nav-link href=/about>About</a></li><li class="mt-4 inline-block lg:hidden"><a class="btn btn-outline-primary btn-sm" href=/contact>Contact</a></li></ul><div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0"><div class="theme-switcher mr-5"><input id=theme-switcher data-theme-switcher type=checkbox>
-<label for=theme-switcher><span class=sr-only>theme switcher</span>
-<span><svg class="absolute left-[4px] top-[4px] z-10 opacity-100 dark:opacity-0" viewBox="0 0 56 56" fill="#fff" height="16" width="16"><path d="M30 4.6c0-1-.9-2-2-2a2 2 0 00-2 2v5c0 1 .9 2 2 2s2-1 2-2zm9.6 9a2 2 0 000 2.8c.8.8 2 .8 2.9.0L46 13a2 2 0 000-2.9 2 2 0 00-3 0zm-26 2.8c.7.8 2 .8 2.8.0.8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9.0-.7.8-.7 2.1.0 3zM28 16A12 12 0 0016 28a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0028 16zm23.3 14c1.1.0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 00-2 2c0 1.1 1 2 2 2zM4.7 26a2 2 0 00-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2zm37.8 13.6a2 2 0 00-3 0 2 2 0 000 2.9l3.6 3.5a2 2 0 002.9.0c.8-.8.8-2.1.0-3zM10 43.1a2 2 0 000 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1.0-2.9s-2-.8-2.9.0zm20 3.4c0-1.1-.9-2-2-2a2 2 0 00-2 2v4.9c0 1 .9 2 2 2s2-1 2-2z"/></svg><svg class="absolute left-[4px] top-[4px] z-10 opacity-0 dark:opacity-100" viewBox="0 0 24 24" fill="none" height="16" width="16"><path fill="#000" fill-rule="evenodd" clip-rule="evenodd" d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4.0 008.7 1.8c1-.3 2 .5 1.5 1.5v.1A10.3 10.3.0 0112.4 22 10.3 10.3.0 013.2 6.7c1-2 2.9-3.5 4.9-4.4z"/></svg></span></label></div><script>var darkMode=!1,themeSwitch;window.matchMedia("(prefers-color-scheme: dark)").matches&&(darkMode=!0),localStorage.getItem("theme")==="dark"?darkMode=!0:localStorage.getItem("theme")==="light"&&(darkMode=!1),darkMode&&document.documentElement.classList.toggle("dark"),themeSwitch=document.querySelectorAll("[data-theme-switcher]"),document.addEventListener("DOMContentLoaded",()=>{[].forEach.call(themeSwitch,function(e){e.checked=!!darkMode,e.addEventListener("click",()=>{document.documentElement.classList.toggle("dark"),localStorage.setItem("theme",document.documentElement.classList.contains("dark")?"dark":"light")})})})</script><a href=/contact class="btn btn-outline-primary btn-sm hidden lg:inline-block">Contact</a></div></nav></header><main><section class="section pt-7"><div class=container><div class="row justify-center"><article class=lg:col-10><div class="mb-10 flex justify-center"><picture><source srcset=/images/blog/randomPosition/CoverImage_hu569de8fbc99ac1b63aff186c286b5a91_170323_545x0_resize_q90_h2_lanczos_3.webp media="(max-width: 575px)"><source srcset=/images/blog/randomPosition/CoverImage_hu569de8fbc99ac1b63aff186c286b5a91_170323_600x0_resize_q90_h2_lanczos_3.webp media="(max-width: 767px)"><source srcset=/images/blog/randomPosition/CoverImage_hu569de8fbc99ac1b63aff186c286b5a91_170323_700x0_resize_q90_h2_lanczos_3.webp media="(max-width: 991px)"><source srcset=/images/blog/randomPosition/CoverImage_hu569de8fbc99ac1b63aff186c286b5a91_170323_1110x0_resize_q90_h2_lanczos_3.webp><img loading=lazy decoding=async src=/images/blog/randomPosition/CoverImage_hu569de8fbc99ac1b63aff186c286b5a91_170323_1110x0_resize_lanczos_3.png class="max-h-48 w-auto rounded img" alt="Random position spawning" width=1280 height=720></picture></div><h1 class="h2 mb-4">Random position spawning</h1><ul class=mb-4><li class="mr-4 inline-block"><i class="fa-regular fa-clock mr-2"></i>
-October 13, 2023</li><li class="mr-4 inline-block"><i class="fa-regular fa-folder mr-2"></i>
-<a href=/categories/tutorial/ class=ms-1>Tutorial
-,</a>
-<a href=/categories/template/ class=ms-1>Template</a></li></ul><div class="content mb-10"><details class=table-of-content><summary>Table of Contents</summary><nav id=TableOfContents><ol><li><a href=#introduction>Introduction</a></li><li><a href=#random-position-offscreen>Random position offscreen</a></li><li><a href=#random-position-on-screen>Random position on screen</a></li><li><a href=#and-now-you>And now you!</a></li></ol></nav></details><h2 id=introduction>Introduction</h2><p>One of the key elements that contributes to the interactivity of a game is the ability to seamlessly spawn objects into the game world. Whether it&rsquo;s an enemy unit stepping out of the shadows, power-ups magically appearing, or obstacles falling from the sky, the art of spawning objects is a fundamental skill for game developers.
-In this blog post I will explain how to spawn an object at a random position on or off the screen in Unity2D. You can download the code on <a href=https://github.com/GamesAndCode/RandomSpawnPosition target=_blank>github</a>
-or download a Unity package in the <a href=/code>Code section</a>
-to follow along. There is a class called <a href=https://github.com/GamesAndCode/RandomSpawnPosition/blob/main/Assets/Scripts/Spawner.cs target=_blank>Spawner</a>
-that is associated with a game object in the scene. You can use it to play around with the different methods.</p><h2 id=random-position-offscreen>Random position offscreen</h2><p>When developing several 2D games, I always wondered about a good way to spawn objects out of the player&rsquo;s view. Just using a fixed value from the player character did not seem right. What happens if someone plays the game on a different screen resolution? The objects will simply not spawn at the intended location.
-A better approach is to calculate the screen boundaries and use them as a reference. This can be done using the game camera. If the edges of the screen are known objects can be moved outwards with a distance determined by us.<br>In most cases Unity&rsquo;s Main Camera is needed for this purpose. Unfortunately, the edges of the camera do not correspond to the coordinates in the scene. But they can easily be transformed into a scene position using the <a href=https://docs.unity3d.com/ScriptReference/Camera.ScreenToWorldPoint.html target=_blank>Camera.ScreenToWorldPoint</a>
-method. The following code snippet demonstrates how to get the edges of our screen and the screen size.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#66d9ef>float</span> cameraDistance = mainCamera.nearClipPlane;
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>// Calculate the coordinates of the screen borders</span>
-</span></span><span style=display:flex><span>BottomLeft = mainCamera.ScreenToWorldPoint(<span style=color:#66d9ef>new</span> Vector3(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>, cameraDistance));
-</span></span><span style=display:flex><span>TopLeft = mainCamera.ScreenToWorldPoint(<span style=color:#66d9ef>new</span> Vector3(<span style=color:#ae81ff>0</span>, Screen.height, cameraDistance));
-</span></span><span style=display:flex><span>TopRight = mainCamera.ScreenToWorldPoint(<span style=color:#66d9ef>new</span> Vector3(Screen.width, Screen.height, cameraDistance));
-</span></span><span style=display:flex><span>BottomRight = mainCamera.ScreenToWorldPoint(<span style=color:#66d9ef>new</span> Vector3(Screen.width, <span style=color:#ae81ff>0</span>, cameraDistance));
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>Width = BottomRight.x - BottomLeft.x;
-</span></span><span style=display:flex><span>Height = TopLeft.y - BottomLeft.y;
-</span></span></code></pre></div><p>I have created public fields for the four corners, the height and width, which are set in this code block. You can find the code itself in the <a href=https://github.com/GamesAndCode/RandomSpawnPosition/blob/main/Assets/Scripts/ScreenBorders.cs target=_blank>ScreenBorders class</a>
-.<br>With this information, we can start calculating a random position on or off the screen. The basic idea is to use Unitys Random class to get a position on one of the screen borders and then move that point an additional distance.
-For example, if we want to spawn an object at the top of the screen, we can simply calculate a random x-position between the top edges. Then we take the y-variable of a top edge and add the distance we want the object to be outside of the screen:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#66d9ef>float</span> x = Random.Range(screenBorder.topLeft.x, screenBorder.topRight.x);
-</span></span><span style=display:flex><span><span style=color:#66d9ef>float</span> y = screenBorder.topLeft.y + AdditionalDistance;
-</span></span></code></pre></div><p>AdditionalDistance is again a public field that I set above in my class. Using this approach, we can decide on which side of the screen to spawn the object. A method that takes the direction as a parameter and returns a random position might look like this:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#66d9ef>private</span> Vector2 OutOfScreenDirection(ScreenDirection direction)
-</span></span><span style=display:flex><span>{
-</span></span><span style=display:flex><span>    screenBorder.CalculateScreenBorders();
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>float</span> x = Random.Range(screenBorder.BottomLeft.x - AdditionalDistance, screenBorder.BottomRight.x + AdditionalDistance);
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>float</span> y = Random.Range(screenBorder.BottomLeft.y - AdditionalDistance, screenBorder.TopLeft.y + AdditionalDistance);
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>switch</span> (direction)
-</span></span><span style=display:flex><span>    {
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>case</span> ScreenDirection.TOP:
-</span></span><span style=display:flex><span>            y = screenBorder.topLeft.y + AdditionalDistance;
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>break</span>;
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>case</span> ScreenDirection.BOTTOM:
-</span></span><span style=display:flex><span>            y = screenBorder.bottomLeft.y - AdditionalDistance;
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>break</span>;
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>case</span> ScreenDirection.LEFT:
-</span></span><span style=display:flex><span>            x = screenBorder.bottomLeft.x - AdditionalDistance;
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>break</span>;
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>case</span> ScreenDirection.RIGHT:
-</span></span><span style=display:flex><span>            x = screenBorder.bottomRight.x + AdditionalDistance;
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>break</span>;
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>new</span> Vector2(x, y);
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><p>You will find this method in the class called <a href=https://github.com/GamesAndCode/RandomSpawnPosition/blob/main/Assets/Scripts/RandomPosition.cs target=_blank>RandomPosition</a>
-. The ScreenDirection parameter is a value from an <a href=https://github.com/GamesAndCode/RandomSpawnPosition/blob/main/Assets/Scripts/ScreenDirection.cs target=_blank>Enum</a>
-, that defines the direction. This method returns us the position, from a certain direction, outside the player&rsquo;s view. In case we don&rsquo;t care for which direction the random position is calculated, we can write an additional method:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#66d9ef>public</span> Vector2 OutOfScreen()
-</span></span><span style=display:flex><span>{
-</span></span><span style=display:flex><span>    ScreenDirection[] directions = (ScreenDirection[])Enum.GetValues(<span style=color:#66d9ef>typeof</span>(ScreenDirection));
-</span></span><span style=display:flex><span>    ScreenDirection randomDirection = directions[Random.Range(<span style=color:#ae81ff>0</span>, directions.Length)];
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> OutOfScreenDirection(randomDirection);
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><p>To demonstrate the result I will use animations for the rest of this post. In the animations the presented methods are called very often in small intervals. At the random positions I get from this, I instantiate colored circles. In the following animation it can be observed which positions are covered by the method when it is called several times.</p><figure class=img-center role=group aria-describedby="caption-Random position off screen"><img title="Random position out of the screen" loading=lazy decoding=async class="img img-fluid" width=1280 height=720 src=/images/blog/randomPosition/OutOfScreen.gif alt="Random position out of the screen" onerror='this.onerror="null",this.src=""'><figcaption id="caption-Random position off screen">Random position off screen</figcaption></figure><script>window.addEventListener("load",e=>{const t=GLightbox()})</script><p>The objects we spawn will all end up at the same distance out of the player&rsquo;s view. A use case for this would be to spawn some enemies that move towards the player.<br>It may happen that you do not want to leave the spawn position entirely to chance. For example, it could be the case that spawn positions are only desired from the left and right. In this case we can write another method that leaves this decision to us.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#66d9ef>public</span> Vector2 OutOfScreenDirection(<span style=color:#66d9ef>params</span> ScreenDirection[] screenDirections)
-</span></span><span style=display:flex><span>{
-</span></span><span style=display:flex><span>    ScreenDirection randomSpawnDirection = screenDirections[Random.Range(<span style=color:#ae81ff>0</span>, screenDirections.Length)];
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> OutOfScreenDirection(randomSpawnDirection);
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><p>Instead of passing an array, I decided to use the params keyword. The params keyword allows us to add a variable number of arguments of type ScreenDirection. You can read more about this in the <a href=https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/params target=_blank>C# documentation</a>
-. With that we can add multiple direction values as parameters and get a random position from one of them. For example if we are only interested in getting random positions from left and right, we simply pass ScreenDirection.LEFT and ScreenDirection.RIGHT as arguments to the method. You can see this example in the first image below. You can also use the method to influence the probability from which side the random position is more likely to be calculated by passing the same direction multiple times as an argument.</p><div style=display:flex;justify-content:space-evenly><figure class=img-center role=group aria-describedby="caption-Using the method:SpawnOutOfScreen (ScreenDirection.LEFT, ScreenDirection.RIGHT)"><img title="Spawning objects left and right to the screen" loading=lazy decoding=async class="img img-fluid" width=400 height=720 src=/images/blog/randomPosition/OutOfScreenLeftRight.gif alt="Spawning objects left and right to the screen" onerror='this.onerror="null",this.src=""'><figcaption id="caption-Using the method:SpawnOutOfScreen (ScreenDirection.LEFT, ScreenDirection.RIGHT)">Using the method:<br>SpawnOutOfScreen (ScreenDirection.LEFT, ScreenDirection.RIGHT)</figcaption></figure><figure class=img-center role=group aria-describedby="caption-SpawnOutOfScreen (ScreenDirection.TOP) with a negative value"><img title="Spawning objects at the top, inside the screen boundries" loading=lazy decoding=async class="img img-fluid" width=400 height=720 src=/images/blog/randomPosition/OnScreenTop.gif alt="Spawning objects at the top, inside the screen boundries" onerror='this.onerror="null",this.src=""'><figcaption id="caption-SpawnOutOfScreen (ScreenDirection.TOP) with a negative value">SpawnOutOfScreen (ScreenDirection.TOP) with a negative value</figcaption></figure></div><p>You may be wondering what is happening in the second image. By setting the AdditionalDistance variable to a negative value, I used the OutOfScreenDirection method to get a random position within the player&rsquo;s view at the top position.<br>But before we go into more detail about onscreen spawning, I want to highlight the current approach we have chosen. The positions we get around the screen border will always have the same distance to the border. As a result, all possible random positions represent a rectangle. If we were to spawn multiple objects with a fixed movement speed at the same time, they would take the same amount of time to enter the player view. But what if we want to spawn objects outside the screen, but all at the same distance from the player?<br>For this approach, we assume that the player is in the center of the screen, as is most often the case in survivor rogue-like games. Using the distance to an edge of the screen as a radius, we can get random positions in a circular shape from the screen. For directions we use the Random class to get an angle corresponding to the direction. For example, the position to the right must be between an angle of -45 to 45. Following the same scheme as we did for the rectangle screen border, I created a new method in the <a href=https://github.com/GamesAndCode/RandomSpawnPosition/blob/main/Assets/Scripts/RandomPosition.cs target=_blank>RandomPosition class</a>
-called <em>private Vector2 OutOfScreenDirectionCircular(ScreenDirection direction)</em>. This method gives us a random position on a circular shape outside the screen. As before, we can specify the directions. The result will look like this:</p><div style=display:flex;justify-content:space-evenly><figure class=img-center role=group aria-describedby="caption-Random position off screen circular"><img title="Spawning objects at a random position around a target" loading=lazy decoding=async class="img img-fluid" width=400 height=720 src=/images/blog/randomPosition/OutOfScreenOnCircular.gif alt="Spawning objects at a random position around a target" onerror='this.onerror="null",this.src=""'><figcaption id="caption-Random position off screen circular">Random position off screen circular</figcaption></figure><figure class=img-center role=group aria-describedby="caption-Using the method:OutOfScreenDirectionCircular (ScreenDirection.LEFT, ScreenDirection.RIGHT)"><img title="Spawning objects off screen left and right circular" loading=lazy decoding=async class="img img-fluid" width=400 height=720 src=/images/blog/randomPosition/OutOfScreenCircularLeftRight.gif alt="Spawning objects off screen left and right circular" onerror='this.onerror="null",this.src=""'><figcaption id="caption-Using the method:OutOfScreenDirectionCircular (ScreenDirection.LEFT, ScreenDirection.RIGHT)">Using the method:<br>OutOfScreenDirectionCircular (ScreenDirection.LEFT, ScreenDirection.RIGHT)</figcaption></figure></div><p>To make it as convenient as possible to switch between rectangle and circle positions, I created a public bool field <em>Circular</em> inside the RandomPosition class. Use this field to toggle between the two random position types.<br>To cover another use case, I created another public field called <em>SinglePoint</em>. If this field is set to True, then the methods already presented will return only one point from one direction at a time. To understand this better the two following graphics serve.</p><div style=display:flex;justify-content:space-evenly;align-items:end><figure class=img-center role=group aria-describedby="caption-Random position off screen:SinglePoint = True;Circular = False;"><img title="Spawning objects at a random position around a target" loading=lazy decoding=async class="img img-fluid" width=802 height=528 src=/images/blog/randomPosition/OutOfScreenPoint_huaf34fbf3356fec395b028e0610cff063_26116_802x528_fill_q100_lanczos_smart1.JPG alt="Spawning objects at a random position around a target" onerror='this.onerror="null",this.src="/images/blog/randomPosition/OutOfScreenPoint_huaf34fbf3356fec395b028e0610cff063_26116_802x528_fill_q100_lanczos_smart1.JPG"'><figcaption id="caption-Random position off screen:SinglePoint = True;Circular = False;">Random position off screen:<br>SinglePoint = True;<br>Circular = False;</figcaption></figure><figure class=img-center role=group aria-describedby="caption-Random position off screen:SinglePoint = True;Circular = True;"><img title="Spawning objects at a random position around a target" loading=lazy decoding=async class="img img-fluid ms-1" width=760 height=706 src=/images/blog/randomPosition/OutOfScreenCircularPoint_huaf34fbf3356fec395b028e0610cff063_32494_760x706_fill_q100_lanczos_smart1.JPG alt="Spawning objects at a random position around a target" onerror='this.onerror="null",this.src="/images/blog/randomPosition/OutOfScreenCircularPoint_huaf34fbf3356fec395b028e0610cff063_32494_760x706_fill_q100_lanczos_smart1.JPG"'><figcaption id="caption-Random position off screen:SinglePoint = True;Circular = True;">Random position off screen:<br>SinglePoint = True;<br>Circular = True;</figcaption></figure></div><p>As you can see, the points are always located at half the height/width. If this function is still unclear, I suggest looking directly in the code.
-All in all, this was quite a lot of information at once. Use the <a href=https://github.com/GamesAndCode/RandomSpawnPosition/blob/main/Assets/Scripts/Spawner.cs target=_blank>Spawner class</a>
-to play around with the different methods. If you have any more questions, feel free to ask them in the comments. The next chapter on onscreen spawning will be easier.</p><h2 id=random-position-on-screen>Random position on screen</h2><p>In the last chapter we already saw how to use a negative AdditonalDistance value to get a position inside the screen with the <em>public Vector2 OutOfScreen()</em> method.
-Getting a random position on the screen is quite simple compared to the previous methods. We just need to calculate a position between each screen boundary.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#66d9ef>public</span> Vector2 OnScreen()
-</span></span><span style=display:flex><span>{
-</span></span><span style=display:flex><span>    screenBorder.CalculateScreenBorders();
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>new</span> Vector2(Random.Range(screenBorder.BottomLeft.x, screenBorder.BottomRight.x), Random.Range(screenBorder.BottomLeft.y, screenBorder.TopLeft.y));
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><p>The simulation of this approach looks like this:</p><figure class=img-center role=group aria-describedby="caption-Random position on screen"><img title="Spawning objects at a random position on screen" loading=lazy decoding=async class="img img-fluid" width=1280 height=720 src=/images/blog/randomPosition/OnScreen.gif alt="Spawning objects at a random position on screen" onerror='this.onerror="null",this.src=""'><figcaption id="caption-Random position on screen">Random position on screen</figcaption></figure><p>Another common way to spawn objects is to spawn them around a target, for example the player. This can be especially helpful when, for example, enemies, spells, or special effects are supposed to appear near the player. Unity&rsquo;s Random class has a method called <a href=https://docs.unity3d.com/2023.3/Documentation/ScriptReference/Random-insideUnitCircle.html target=_blank>insideUnitCircle</a>
-, which returns a random point inside or on a circle with the radius of 1. We can use this method and multiply it with a desired radius. Also we have to add the position of the target.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#66d9ef>public</span> Vector2 AroundTargetInCircle(GameObject target, <span style=color:#66d9ef>float</span> radius)
-</span></span><span style=display:flex><span>{
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> (Random.insideUnitCircle * radius) + (Vector2)target.transform.position;
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><p>If we want the random position to always have the same distance to the target, we just have to normalize the result of the Random.insideUnitCircle method. This way we always get a Vector2 with a magnitude of 1.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#66d9ef>public</span> Vector2 AroundTargetOnCircle(GameObject target, <span style=color:#66d9ef>float</span> radius)
-</span></span><span style=display:flex><span>{
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> (Random.insideUnitCircle.normalized * radius) + (Vector2)target.transform.position;
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><p>Both options are shown in the following figures. The white box in the center of the screen symbolizes the target.</p><div style=display:flex;justify-content:space-evenly><figure class=img-center role=group aria-describedby="caption-Random position around the target inside of the circle"><img title="Spawning objects at a random position around a target" loading=lazy decoding=async class="img img-fluid" width=400 height=720 src=/images/blog/randomPosition/AroundTargetInCircle.gif alt="Spawning objects at a random position around a target" onerror='this.onerror="null",this.src=""'><figcaption id="caption-Random position around the target inside of the circle">Random position around the target inside of the circle</figcaption></figure><figure class=img-center role=group aria-describedby="caption-Random position around the target on the circle"><img title="Spawning objects at a random position around a target" loading=lazy decoding=async class="img img-fluid" width=400 height=720 src=/images/blog/randomPosition/AroundTargetOnCircle.gif alt="Spawning objects at a random position around a target" onerror='this.onerror="null",this.src=""'><figcaption id="caption-Random position around the target on the circle">Random position around the target on the circle</figcaption></figure></div><p>In our method <em>AroundTargetInCircle</em> it is possible that objects also appear on the target or directly next to it. However, this is not always intentional. For example, it makes no sense if an enemy spawns right next to the player and the player has no time to react. With a small adjustment in the code we can add a safety distance between the target and the spawn area. So besides the outer radius we need an inner radius that defines the safety distance. Because the spawnarea now looks like a donut, we also call the method after it:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#66d9ef>public</span> Vector2 AroundTargetInDonut(GameObject target, <span style=color:#66d9ef>float</span> innerRadius, <span style=color:#66d9ef>float</span> outerRadius)
-</span></span><span style=display:flex><span>{
-</span></span><span style=display:flex><span>    Vector2 position = AroundTargetInCircle(target, outerRadius - innerRadius);
-</span></span><span style=display:flex><span>    Vector2 direction = (position - (Vector2)target.transform.position).normalized;
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> position + direction * innerRadius;
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><p>As you may have noticed, we use a little trick for this method. We first get a random point around the target, subtracting the safety distance from the radius. We add this safety distance back at the end. This creates an empty area around the target. An example can be seen in the following figure:</p><figure class=img-center role=group aria-describedby="caption-Random position around target with safety distance"><img title="Spawning objects at a random position around a target with additional space" loading=lazy decoding=async class="img img-fluid" width=600 height=720 src=/images/blog/randomPosition/AroundTargetInDonut.gif alt="Spawning objects at a random position around a target with additional space" onerror='this.onerror="null",this.src=""'><figcaption id="caption-Random position around target with safety distance">Random position around target with safety distance</figcaption></figure><p>Having the random position is a good start, but what now? There are several ways to spawn objects in Unity. The most basic way is to use the instantiate method. Depending on the game you are making, you may want to consider a different approach, such as an object pool. For further reading I recommend an <a href=https://gamedevbeginner.com/how-to-spawn-an-object-in-unity-using-instantiate/ target=_blank>article by gamedevbeginner</a>
-.<br>I hope you enjoyed the article and learned a few new things. Since this is one of my first technical posts, I&rsquo;m especially happy about constructive feedback. Thanks for reading.</p><h2 id=and-now-you>And now you!</h2><ul><li>Get the <a href=https://github.com/GamesAndCode/RandomSpawnPosition target=_blank>code template</a></li><li>Ask your questions in the comments section.</li><li>Missing some additional spawn options?</li><li>Interested in a post about an enemy spawner?</li></ul></div><div class="row items-start justify-between"><div class="lg:col-5 mb-10 flex items-center lg:mb-0"><h5 class=mr-3>Tags:</h5><ul><li class=inline-block><a class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white" href=/tags/template/>Template</a></li><li class=inline-block><a class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white" href=/tags/code/>Code</a></li><li class=inline-block><a class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white" href=/tags/unity/>Unity</a></li><li class=inline-block><a class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white" href=/tags/2d/>2d</a></li><li class=inline-block><a class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white" href=/tags/spawning/>Spawning</a></li><li class=inline-block><a class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white" href=/tags/tutorial/>Tutorial</a></li></ul></div></div><div class=mt-20><div id=disqus_thread></div><script type=application/javascript>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//gameandcode.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div></article></div><div class="section pb-0"><h2 class="h3 mb-12">Related Posts</h2><div class=row><div class=lg:col-4><div class="bg-body dark:bg-darkmode-body"><picture><source srcset=/images/blog/adventCalendar/AdventCalendar_Cover_hu106ea4f31cfcdfd992b33787ec63d83c_3045231_545x0_resize_q90_h2_lanczos_3.webp media="(max-width: 575px)"><source srcset=/images/blog/adventCalendar/AdventCalendar_Cover_hu106ea4f31cfcdfd992b33787ec63d83c_3045231_600x0_resize_q90_h2_lanczos_3.webp media="(max-width: 767px)"><source srcset=/images/blog/adventCalendar/AdventCalendar_Cover_hu106ea4f31cfcdfd992b33787ec63d83c_3045231_700x0_resize_q90_h2_lanczos_3.webp media="(max-width: 991px)"><source srcset=/images/blog/adventCalendar/AdventCalendar_Cover_hu106ea4f31cfcdfd992b33787ec63d83c_3045231_1110x0_resize_q90_h2_lanczos_3.webp><img loading=lazy decoding=async src=/images/blog/adventCalendar/AdventCalendar_Cover_hu106ea4f31cfcdfd992b33787ec63d83c_3045231_1110x0_resize_lanczos_3.png class="mb-3 max-h-32 w-auto rounded img" alt="Advent calendar template" width=1680 height=939></picture><h4 class=mb-3><a href=/blog/adventcalendar2023/>Advent calendar template</a></h4><p class=mb-2>Learn how to use the advent calendar template in Unity2D (no coding required)</p><a class="btn btn-outline-primary btn-sm" href=/blog/adventcalendar2023/>Read More</a><ul class=mt-2><li class="mr-4 inline-block"><i class="fa-regular fa-folder mr-2"></i>
-<a href=/categories/tutorial/ class=ms-1>Tutorial
-,</a>
-<a href=/categories/template/ class=ms-1>Template</a></li></ul></div></div><div class=lg:col-4><div class="bg-body dark:bg-darkmode-body"><picture><source srcset=/images/blog/KenneyJam/KenneyJamLogo_hu2ae239ad31eb85dc654d6dd34ede7829_9686_545x0_resize_q90_h2_lanczos_3.webp media="(max-width: 575px)"><source srcset=/images/blog/KenneyJam/KenneyJamLogo_hu2ae239ad31eb85dc654d6dd34ede7829_9686_600x0_resize_q90_h2_lanczos_3.webp media="(max-width: 767px)"><source srcset=/images/blog/KenneyJam/KenneyJamLogo_hu2ae239ad31eb85dc654d6dd34ede7829_9686_700x0_resize_q90_h2_lanczos_3.webp media="(max-width: 991px)"><source srcset=/images/blog/KenneyJam/KenneyJamLogo_hu2ae239ad31eb85dc654d6dd34ede7829_9686_1110x0_resize_q90_h2_lanczos_3.webp><img loading=lazy decoding=async src=/images/blog/KenneyJam/KenneyJamLogo_hu2ae239ad31eb85dc654d6dd34ede7829_9686_1110x0_resize_lanczos_3.png class="mb-3 max-h-32 w-auto rounded img" alt="Kenney Jam 2023 recap" width=530 height=200></picture><h4 class=mb-3><a href=/blog/kenneyjampost/>Kenney Jam 2023 recap</a></h4><p class=mb-2>Game jams are a great way to improve your programming and game design skills. Read more about my development process and the lessons learned.</p><a class="btn btn-outline-primary btn-sm" href=/blog/kenneyjampost/>Read More</a><ul class=mt-2><li class="mr-4 inline-block"><i class="fa-regular fa-folder mr-2"></i>
-<a href=/categories/game-jam/ class=ms-1>Game jam</a></li></ul></div></div><div class=lg:col-4><div class="bg-body dark:bg-darkmode-body"><picture><source srcset=/images/blog/gameStudioJourney/Thumbnail-BecomingSelfEmployed_huecfc1063ed87334f55cc177350fbde43_37362_545x0_resize_q90_h2_lanczos_3.webp media="(max-width: 575px)"><source srcset=/images/blog/gameStudioJourney/Thumbnail-BecomingSelfEmployed_huecfc1063ed87334f55cc177350fbde43_37362_600x0_resize_q90_h2_lanczos_3.webp media="(max-width: 767px)"><source srcset=/images/blog/gameStudioJourney/Thumbnail-BecomingSelfEmployed_huecfc1063ed87334f55cc177350fbde43_37362_700x0_resize_q90_h2_lanczos_3.webp media="(max-width: 991px)"><source srcset=/images/blog/gameStudioJourney/Thumbnail-BecomingSelfEmployed_huecfc1063ed87334f55cc177350fbde43_37362_1110x0_resize_q90_h2_lanczos_3.webp><img loading=lazy decoding=async src=/images/blog/gameStudioJourney/Thumbnail-BecomingSelfEmployed_huecfc1063ed87334f55cc177350fbde43_37362_1110x0_resize_lanczos_3.png class="mb-3 max-h-32 w-auto rounded img" alt='One of those "I quit my job" posts' width=1200 height=627></picture><h4 class=mb-3><a href=/blog/indiedevjourney1/>One of those "I quit my job" posts</a></h4><p class=mb-2>Read about my first steps torwards becoming an indie game developer</p><a class="btn btn-outline-primary btn-sm" href=/blog/indiedevjourney1/>Read More</a><ul class=mt-2><li class="mr-4 inline-block"><i class="fa-regular fa-folder mr-2"></i>
-<a href=/categories/indie-dev-journey/ class=ms-1>Indie dev journey</a></li></ul></div></div></div></div></div></section><script defer src=/plugins/prism/prism.js></script></main><footer class="bg-theme-light dark:bg-darkmode-theme-light"><div class=container><div class="row items-center py-10"><div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left"></div><div class="lg:col-6 mb-8 text-center lg:mb-0"><ul><li class="m-3 inline-block"><a href=/privacy-policy/>Privacy Policy</a></li></ul></div><div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right"><ul class=social-icons><li><a target=_blank aria-label=twitter rel="nofollow noopener" href=https://twitter.com/GameAndCode><i class="fab fa-x-twitter"></i></a></li><li><a target=_blank aria-label=instragram rel="nofollow noopener" href=https://www.instagram.com/game.and.code/><i class="fab fa-instagram"></i></a></li><li><a target=_blank aria-label=github rel="nofollow noopener" href="https://github.com/GamesAndCode?tab=repositories"><i class="fab fa-github"></i></a></li></ul></div></div></div></footer><script crossorigin=anonymous integrity="sha256-QOyhSRd/zkUOdv+Fb3HQke/ctx/rLXfogcCGeowi+u0=" src=/js/script.min.40eca149177fce450e76ff856f71d091efdcb71feb2d77e881c0867a8c22faed.js></script>
-<script>"serviceWorker"in navigator&&navigator.serviceWorker.register("/service-worker.js")</script></body></html>
+<!doctype html>
+<html
+  itemscope
+  lang="en-us"
+  itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <meta charset="utf-8" />
+<title>Random position spawning</title>
+
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+
+<meta name="theme-name" content="hugoplate" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/images/favicon_hub058fa30b9d244e11f7c8a754c47c0c6_3761_32x0_resize_lanczos_3.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hub058fa30b9d244e11f7c8a754c47c0c6_3761_32x0_resize_lanczos_3.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_hub058fa30b9d244e11f7c8a754c47c0c6_3761_16x0_resize_lanczos_3.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_hub058fa30b9d244e11f7c8a754c47c0c6_3761_32x0_resize_lanczos_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon_hub058fa30b9d244e11f7c8a754c47c0c6_3761_180x0_resize_lanczos_3.png">
+
+
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta
+  name="msapplication-TileColor"
+  content="#ddd" />
+<meta
+  name="theme-color"
+  content="#ffffff" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.128.0">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta name="keywords" content="spawn offscreen, unity instantiate, unity instantiate prefab, unity random position, unity spawn object, random screen position, ouside of camera view" />
+
+
+
+
+<meta name="description" content="Learn how to spawn objects on and off the screen in Unity." />
+
+
+
+  <meta name="author" content="GameAndCode" />
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+      
+        <meta property="og:image" content="http://localhost:1313/images/blog/randomPosition/CoverImage.png" />
+        <meta name="twitter:image" content="http://localhost:1313/images/blog/randomPosition/CoverImage.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+      
+      
+      <meta property="og:image:width" content="1280" />
+      <meta property="og:image:height" content="720" />
+    
+
+    
+    <meta property="og:image:type" content="image/.png" />
+  
+
+  
+
+
+
+
+
+<meta property="og:title" content="Random position spawning" />
+<meta property="og:description" content="Learn how to spawn objects on and off the screen in Unity." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://localhost:1313/blog/objectspawner/" />
+
+
+<meta name="twitter:title" content="Random position spawning" />
+<meta name="twitter:description" content="Learn how to spawn objects on and off the screen in Unity." />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  let indexURL = "http://localhost:1313/searchindex.json";
+  let includeSectionsInSearch = ["blog"];
+  let no_results_for = "No results for";
+  let empty_search_results_placeholder = "Type something to search..";
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
+<link rel="preconnect" href="//cdnjs.cloudflare.com" />
+<link rel="preconnect" href="//www.googletagmanager.com" />
+<link rel="preconnect" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://use.fontawesome.com" />
+<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//platform.linkedin.com" />
+<link rel="dns-prefetch" href="//platform.twitter.com" />
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script>
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href = "https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+</script>
+
+
+
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+
+
+
+
+  
+
+
+
+<link
+  href="/css/style.css"
+  integrity=""
+  rel="stylesheet" />
+
+    
+  
+    
+    <link href="/plugins/prism/prism.css" integrity="" rel="stylesheet" />
+  
+
+  </head>
+
+  <body>
+    
+    
+      
+
+
+
+
+
+      
+      <div
+  class="fixed left-0 top-0 z-50 flex w-[30px] items-center justify-center bg-gray-200 py-[2.5px] text-[12px] uppercase text-black sm:bg-red-200 md:bg-yellow-200 lg:bg-green-200 xl:bg-blue-200 2xl:bg-pink-200">
+  <span class="block sm:hidden">all</span>
+  <span class="hidden sm:block md:hidden">sm</span>
+  <span class="hidden md:block lg:hidden">md</span>
+  <span class="hidden lg:block xl:hidden">lg</span>
+  <span class="hidden xl:block 2xl:hidden">xl</span>
+  <span class="hidden 2xl:block">2xl</span>
+</div>
+
+    
+
+
+    
+    <header
+  class="header sticky top-0 z-30">
+  <nav class="navbar container">
+    
+    <div class="order-0">
+      
+      <a class="navbar-brand block" href="/">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+    
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img logo-light"
+      width="120"
+      height="32"
+      src="/images/Logo/GameAndCodeBlack_hub877a85b9be016b499364d6ab8bed62d_118049_240x0_resize_q90_h2_lanczos_3.webp"
+      alt="Game and code"
+      onerror="this.onerror=null;this.src='\/images\/Logo\/GameAndCodeBlack_hub877a85b9be016b499364d6ab8bed62d_118049_240x0_resize_lanczos_3.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img logo-dark"
+      width="120"
+      height="32"
+      src="/images/Logo/GameAndCodeWhite_hub877a85b9be016b499364d6ab8bed62d_70897_240x0_resize_q90_h2_lanczos_3.webp"
+      alt="Game and code"
+      onerror="this.onerror=null;this.src='\/images\/Logo\/GameAndCodeWhite_hub877a85b9be016b499364d6ab8bed62d_70897_240x0_resize_lanczos_3.png';" />
+  
+  
+
+
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/blog"
+              >Blog</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/code"
+              >Code</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/useful-resources"
+              >Resources</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/about"
+              >About</a
+            >
+          </li>
+        
+      
+      
+        <li class="mt-4 inline-block lg:hidden">
+          <a
+            class="btn btn-outline-primary btn-sm"
+            href="/contact">
+            Contact
+          </a>
+        </li>
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      
+        
+      
+
+      
+
+
+
+
+
+
+
+
+
+      
+
+
+  <div class="theme-switcher mr-5">
+    <input id="theme-switcher" data-theme-switcher type="checkbox" />
+    <label for="theme-switcher">
+      <span class="sr-only">theme switcher</span>
+      <span>
+        
+        <svg
+          class="absolute left-[4px] top-[4px] z-10 opacity-100 dark:opacity-0"
+          viewBox="0 0 56 56"
+          fill="#fff"
+          height="16"
+          width="16">
+          <path
+            d="M30 4.6c0-1-.9-2-2-2a2 2 0 0 0-2 2v5c0 1 .9 2 2 2s2-1 2-2Zm9.6 9a2 2 0 0 0 0 2.8c.8.8 2 .8 2.9 0L46 13a2 2 0 0 0 0-2.9 2 2 0 0 0-3 0Zm-26 2.8c.7.8 2 .8 2.8 0 .8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9 0-.7.8-.7 2.1 0 3ZM28 16a12 12 0 0 0-12 12 12 12 0 0 0 12 12 12 12 0 0 0 12-12 12 12 0 0 0-12-12Zm23.3 14c1.1 0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 0 0-2 2c0 1.1 1 2 2 2ZM4.7 26a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2Zm37.8 13.6a2 2 0 0 0-3 0 2 2 0 0 0 0 2.9l3.6 3.5a2 2 0 0 0 2.9 0c.8-.8.8-2.1 0-3ZM10 43.1a2 2 0 0 0 0 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1 0-2.9-.8-.8-2-.8-2.9 0Zm20 3.4c0-1.1-.9-2-2-2a2 2 0 0 0-2 2v4.9c0 1 .9 2 2 2s2-1 2-2Z" />
+        </svg>
+        
+        <svg
+          class="absolute left-[4px] top-[4px] z-10 opacity-0 dark:opacity-100"
+          viewBox="0 0 24 24"
+          fill="none"
+          height="16"
+          width="16">
+          <path
+            fill="#000"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4 0 0 0 8.7 1.8c1-.3 2 .5 1.5 1.5v.1a10.3 10.3 0 0 1-9.4 6.2A10.3 10.3 0 0 1 3.2 6.7c1-2 2.9-3.5 4.9-4.4Z" />
+        </svg>
+      </span>
+    </label>
+  </div>
+
+  
+  
+  <script>
+    var darkMode = false;
+
+    
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches){darkMode = true}
+    
+
+    if (localStorage.getItem("theme") === "dark"){darkMode = true}
+    else if (localStorage.getItem("theme") === "light"){darkMode = false}
+    if (darkMode){document.documentElement.classList.toggle("dark")}
+    var themeSwitch = document.querySelectorAll("[data-theme-switcher]");
+
+    document.addEventListener("DOMContentLoaded", () => {
+      [].forEach.call(themeSwitch, function (ts) {
+        ts.checked = darkMode ? true : false;
+        ts.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+          localStorage.setItem(
+            "theme",
+            document.documentElement.classList.contains("dark") ? "dark" : "light"
+          );
+        });
+      });
+    });
+  </script>
+  
+
+
+
+
+
+      
+      
+        <a
+          href="/contact"
+          class="btn btn-outline-primary btn-sm hidden lg:inline-block">
+          Contact
+        </a>
+      
+    </div>
+  </nav>
+</header>
+
+    
+
+
+
+
+  
+
+
+
+    <main>
+      
+  <section class="section pt-7">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10">
+          
+          
+            <div class="mb-10 flex justify-center">
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+      
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+        
+
+
+        <picture>
+          <source
+            
+              srcset="/images/blog/randomPosition/CoverImage_hu569de8fbc99ac1b63aff186c286b5a91_170323_545x0_resize_q90_h2_lanczos_3.webp"
+            
+            media="(max-width: 575px)" />
+          <source
+            
+              srcset="/images/blog/randomPosition/CoverImage_hu569de8fbc99ac1b63aff186c286b5a91_170323_600x0_resize_q90_h2_lanczos_3.webp"
+            
+            media="(max-width: 767px)" />
+          <source
+            
+              srcset="/images/blog/randomPosition/CoverImage_hu569de8fbc99ac1b63aff186c286b5a91_170323_700x0_resize_q90_h2_lanczos_3.webp"
+            
+            media="(max-width: 991px)" />
+          <source
+            
+              srcset="/images/blog/randomPosition/CoverImage_hu569de8fbc99ac1b63aff186c286b5a91_170323_1110x0_resize_q90_h2_lanczos_3.webp"
+             />
+          <img
+            
+              loading="lazy" decoding="async"
+              src="/images/blog/randomPosition/CoverImage_hu569de8fbc99ac1b63aff186c286b5a91_170323_1110x0_resize_lanczos_3.png"
+            class=" max-h-48 w-auto rounded img"
+            alt="Random position spawning"
+            width="1280"
+            height="720" />
+        </picture>
+      
+      
+    
+    
+  
+
+
+  
+
+
+            </div>
+          
+          <h1 class="h2 mb-4">
+            Random position spawning
+          </h1>
+          <ul class="mb-4">
+            <li class="mr-4 inline-block">
+              <i class="fa-regular fa-clock mr-2"></i>
+              October 13, 2023
+            </li>
+            <li class="mr-4 inline-block">
+              <i class="fa-regular fa-folder mr-2"></i>
+              
+              
+                <a
+                  href="/categories/tutorial/"
+                  class="ms-1"
+                  >Tutorial
+                    , 
+                  
+                </a>
+              
+                <a
+                  href="/categories/template/"
+                  class="ms-1"
+                  >Template
+                </a>
+              
+            </li>
+          </ul>
+          <div class="content mb-10">
+            
+<details class="table-of-content ">
+  <summary>
+    
+      Table of Contents
+    
+  </summary>
+  <nav id="TableOfContents">
+  <ol>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#random-position-offscreen">Random position offscreen</a></li>
+    <li><a href="#random-position-on-screen">Random position on screen</a></li>
+    <li><a href="#and-now-you">And now you!</a></li>
+  </ol>
+</nav>
+</details>
+
+<h2 id="introduction">Introduction</h2>
+<p>One of the key elements that contributes to the interactivity of a game is the ability to seamlessly spawn objects into the game world. Whether it&rsquo;s an enemy unit stepping out of the shadows, power-ups magically appearing, or obstacles falling from the sky, the art of spawning objects is a fundamental skill for game developers.
+In this blog post I will explain how to spawn an object at a random position on or off the screen in Unity2D. You can download the code on <a href="https://github.com/GamesAndCode/RandomSpawnPosition"
+
+
+
+
+ target="_blank"
+ 
+
+
+>github</a>
+ or download a Unity package in the <a href="/code"
+
+
+
+ 
+
+
+>Code section</a>
+ to follow along. There is a class called <a href="https://github.com/GamesAndCode/RandomSpawnPosition/blob/main/Assets/Scripts/Spawner.cs"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Spawner</a>
+ that is associated with a game object in the scene. You can use it to play around with the different methods.</p>
+<h2 id="random-position-offscreen">Random position offscreen</h2>
+<p>When developing several 2D games, I always wondered about a good way to spawn objects out of the player&rsquo;s view. Just using a fixed value from the player character did not seem right. What happens if someone plays the game on a different screen resolution? The objects will simply not spawn at the intended location.
+A better approach is to calculate the screen boundaries and use them as a reference. This can be done using the game camera. If the edges of the screen are known objects can be moved outwards with a distance determined by us.<br>
+In most cases Unity&rsquo;s Main Camera is needed for this purpose. Unfortunately, the edges of the camera do not correspond to the coordinates in the scene. But they can easily be transformed into a scene position using the <a href="https://docs.unity3d.com/ScriptReference/Camera.ScreenToWorldPoint.html"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Camera.ScreenToWorldPoint</a>
+ method. The following code snippet demonstrates how to get the edges of our screen and the screen size.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">float</span> cameraDistance = mainCamera.nearClipPlane;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Calculate the coordinates of the screen borders</span>
+</span></span><span style="display:flex;"><span>BottomLeft = mainCamera.ScreenToWorldPoint(<span style="color:#66d9ef">new</span> Vector3(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, cameraDistance));
+</span></span><span style="display:flex;"><span>TopLeft = mainCamera.ScreenToWorldPoint(<span style="color:#66d9ef">new</span> Vector3(<span style="color:#ae81ff">0</span>, Screen.height, cameraDistance));
+</span></span><span style="display:flex;"><span>TopRight = mainCamera.ScreenToWorldPoint(<span style="color:#66d9ef">new</span> Vector3(Screen.width, Screen.height, cameraDistance));
+</span></span><span style="display:flex;"><span>BottomRight = mainCamera.ScreenToWorldPoint(<span style="color:#66d9ef">new</span> Vector3(Screen.width, <span style="color:#ae81ff">0</span>, cameraDistance));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Width = BottomRight.x - BottomLeft.x;
+</span></span><span style="display:flex;"><span>Height = TopLeft.y - BottomLeft.y;
+</span></span></code></pre></div><p>I have created public fields for the four corners, the height and width, which are set in this code block. You can find the code itself in the <a href="https://github.com/GamesAndCode/RandomSpawnPosition/blob/main/Assets/Scripts/ScreenBorders.cs"
+
+
+
+
+ target="_blank"
+ 
+
+
+>ScreenBorders class</a>
+.<br>
+With this information, we can start calculating a random position on or off the screen. The basic idea is to use Unitys Random class to get a position on one of the screen borders and then move that point an additional distance.
+For example, if we want to spawn an object at the top of the screen, we can simply calculate a random x-position between the top edges. Then we take the y-variable of a top edge and add the distance we want the object to be outside of the screen:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">float</span> x = Random.Range(screenBorder.topLeft.x, screenBorder.topRight.x);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">float</span> y = screenBorder.topLeft.y + AdditionalDistance;
+</span></span></code></pre></div><p>AdditionalDistance is again a public field that I set above in my class. Using this approach, we can decide on which side of the screen to spawn the object. A method that takes the direction as a parameter and returns a random position might look like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">private</span> Vector2 OutOfScreenDirection(ScreenDirection direction)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    screenBorder.CalculateScreenBorders();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span> x = Random.Range(screenBorder.BottomLeft.x - AdditionalDistance, screenBorder.BottomRight.x + AdditionalDistance);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span> y = Random.Range(screenBorder.BottomLeft.y - AdditionalDistance, screenBorder.TopLeft.y + AdditionalDistance);
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">switch</span> (direction)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> ScreenDirection.TOP:
+</span></span><span style="display:flex;"><span>            y = screenBorder.topLeft.y + AdditionalDistance;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> ScreenDirection.BOTTOM:
+</span></span><span style="display:flex;"><span>            y = screenBorder.bottomLeft.y - AdditionalDistance;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> ScreenDirection.LEFT:
+</span></span><span style="display:flex;"><span>            x = screenBorder.bottomLeft.x - AdditionalDistance;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> ScreenDirection.RIGHT:
+</span></span><span style="display:flex;"><span>            x = screenBorder.bottomRight.x + AdditionalDistance;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> Vector2(x, y);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>You will find this method in the class called <a href="https://github.com/GamesAndCode/RandomSpawnPosition/blob/main/Assets/Scripts/RandomPosition.cs"
+
+
+
+
+ target="_blank"
+ 
+
+
+>RandomPosition</a>
+. The ScreenDirection parameter is a value from an <a href="https://github.com/GamesAndCode/RandomSpawnPosition/blob/main/Assets/Scripts/ScreenDirection.cs"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Enum</a>
+, that defines the direction. This method returns us the position, from a certain direction, outside the player&rsquo;s view. In case we don&rsquo;t care for which direction the random position is calculated, we can write an additional method:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> Vector2 OutOfScreen()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    ScreenDirection[] directions = (ScreenDirection[])Enum.GetValues(<span style="color:#66d9ef">typeof</span>(ScreenDirection));
+</span></span><span style="display:flex;"><span>    ScreenDirection randomDirection = directions[Random.Range(<span style="color:#ae81ff">0</span>, directions.Length)];
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> OutOfScreenDirection(randomDirection);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>To demonstrate the result I will use animations for the rest of this post. In the animations the presented methods are called very often in small intervals. At the random positions I get from this, I instantiate colored circles. In the following animation it can be observed which positions are covered by the method when it is called several times.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+    
+    
+
+    
+    
+      <figure
+        class="img-center"
+        role="group"
+        aria-describedby="caption-Random position off screen">
+        <img
+          title="Random position out of the screen"
+          loading="lazy"
+          decoding="async"
+          class="img img-fluid "
+          width="1280"
+          height="720"
+          src="/images/blog/randomPosition/OutOfScreen.gif"
+          alt="Random position out of the screen"
+          onerror="this.onerror='null';this.src=''" />
+        <figcaption id="caption-Random position off screen">
+          Random position off screen
+        </figcaption>
+      </figure>
+    
+
+  
+  
+
+
+
+
+
+
+  <script>
+    window.addEventListener("load", (e) => {
+      const lightbox = GLightbox();
+    });
+  </script>
+
+
+<p>The objects we spawn will all end up at the same distance out of the player&rsquo;s view. A use case for this would be to spawn some enemies that move towards the player.<br>
+It may happen that you do not want to leave the spawn position entirely to chance. For example, it could be the case that spawn positions are only desired from the left and right. In this case we can write another method that leaves this decision to us.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> Vector2 OutOfScreenDirection(<span style="color:#66d9ef">params</span> ScreenDirection[] screenDirections)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    ScreenDirection randomSpawnDirection = screenDirections[Random.Range(<span style="color:#ae81ff">0</span>, screenDirections.Length)];
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> OutOfScreenDirection(randomSpawnDirection);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Instead of passing an array, I decided to use the params keyword. The params keyword allows us to add a variable number of arguments of type ScreenDirection. You can read more about this in the <a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/params"
+
+
+
+
+ target="_blank"
+ 
+
+
+>C# documentation</a>
+. With that we can add multiple direction values as parameters and get a random position from one of them. For example if we are only interested in getting random positions from left and right, we simply pass ScreenDirection.LEFT and ScreenDirection.RIGHT as arguments to the method. You can see this example in the first image below. You can also use the method to influence the probability from which side the random position is more likely to be calculated by passing the same direction multiple times as an argument.</p>
+<div style="display: flex; justify-content: space-evenly;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+    
+    
+
+    
+    
+      <figure
+        class="img-center"
+        role="group"
+        aria-describedby="caption-Using the method:SpawnOutOfScreen (ScreenDirection.LEFT, ScreenDirection.RIGHT)">
+        <img
+          title="Spawning objects left and right to the screen"
+          loading="lazy"
+          decoding="async"
+          class="img img-fluid "
+          width="400"
+          height="720"
+          src="/images/blog/randomPosition/OutOfScreenLeftRight.gif"
+          alt="Spawning objects left and right to the screen"
+          onerror="this.onerror='null';this.src=''" />
+        <figcaption id="caption-Using the method:SpawnOutOfScreen (ScreenDirection.LEFT, ScreenDirection.RIGHT)">
+          Using the method:<br>SpawnOutOfScreen (ScreenDirection.LEFT, ScreenDirection.RIGHT)
+        </figcaption>
+      </figure>
+    
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+    
+    
+
+    
+    
+      <figure
+        class="img-center"
+        role="group"
+        aria-describedby="caption-SpawnOutOfScreen (ScreenDirection.TOP) with a negative value">
+        <img
+          title="Spawning objects at the top, inside the screen boundries"
+          loading="lazy"
+          decoding="async"
+          class="img img-fluid "
+          width="400"
+          height="720"
+          src="/images/blog/randomPosition/OnScreenTop.gif"
+          alt="Spawning objects at the top, inside the screen boundries"
+          onerror="this.onerror='null';this.src=''" />
+        <figcaption id="caption-SpawnOutOfScreen (ScreenDirection.TOP) with a negative value">
+          SpawnOutOfScreen (ScreenDirection.TOP) with a negative value
+        </figcaption>
+      </figure>
+    
+
+  
+  
+
+
+
+
+
+
+
+</div>
+<p>You may be wondering what is happening in the second image. By setting the AdditionalDistance variable to a negative value, I used the OutOfScreenDirection method to get a random position within the player&rsquo;s view at the top position.<br>
+But before we go into more detail about onscreen spawning, I want to highlight the current approach we have chosen. The positions we get around the screen border will always have the same distance to the border. As a result, all possible random positions represent a rectangle. If we were to spawn multiple objects with a fixed movement speed at the same time, they would take the same amount of time to enter the player view. But what if we want to spawn objects outside the screen, but all at the same distance from the player?<br>
+For this approach, we assume that the player is in the center of the screen, as is most often the case in survivor rogue-like games. Using the distance to an edge of the screen as a radius, we can get random positions in a circular shape from the screen. For directions we use the Random class to get an angle corresponding to the direction. For example, the position to the right must be between an angle of -45 to 45. Following the same scheme as we did for the rectangle screen border, I created a new method in the <a href="https://github.com/GamesAndCode/RandomSpawnPosition/blob/main/Assets/Scripts/RandomPosition.cs"
+
+
+
+
+ target="_blank"
+ 
+
+
+>RandomPosition class</a>
+ called <em>private Vector2 OutOfScreenDirectionCircular(ScreenDirection direction)</em>. This method gives us a random position on a circular shape outside the screen. As before, we can specify the directions. The result will look like this:</p>
+<div style="display: flex; justify-content: space-evenly;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+    
+    
+
+    
+    
+      <figure
+        class="img-center"
+        role="group"
+        aria-describedby="caption-Random position off screen circular">
+        <img
+          title="Spawning objects at a random position around a target"
+          loading="lazy"
+          decoding="async"
+          class="img img-fluid "
+          width="400"
+          height="720"
+          src="/images/blog/randomPosition/OutOfScreenOnCircular.gif"
+          alt="Spawning objects at a random position around a target"
+          onerror="this.onerror='null';this.src=''" />
+        <figcaption id="caption-Random position off screen circular">
+          Random position off screen circular
+        </figcaption>
+      </figure>
+    
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+    
+    
+
+    
+    
+      <figure
+        class="img-center"
+        role="group"
+        aria-describedby="caption-Using the method:OutOfScreenDirectionCircular (ScreenDirection.LEFT, ScreenDirection.RIGHT)">
+        <img
+          title="Spawning objects off screen left and right circular"
+          loading="lazy"
+          decoding="async"
+          class="img img-fluid "
+          width="400"
+          height="720"
+          src="/images/blog/randomPosition/OutOfScreenCircularLeftRight.gif"
+          alt="Spawning objects off screen left and right circular"
+          onerror="this.onerror='null';this.src=''" />
+        <figcaption id="caption-Using the method:OutOfScreenDirectionCircular (ScreenDirection.LEFT, ScreenDirection.RIGHT)">
+          Using the method:<br>OutOfScreenDirectionCircular (ScreenDirection.LEFT, ScreenDirection.RIGHT)
+        </figcaption>
+      </figure>
+    
+
+  
+  
+
+
+
+
+
+
+
+</div>
+<p>To make it as convenient as possible to switch between rectangle and circle positions, I created a public bool field <em>Circular</em> inside the RandomPosition class. Use this field to toggle between the two random position types.<br>
+To cover another use case, I created another public field called <em>SinglePoint</em>. If this field is set to True, then the methods already presented will return only one point from one direction at a time. To understand this better the two following graphics serve.</p>
+<div style="display: flex; justify-content: space-evenly; align-items: end;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+
+    
+    
+
+    
+    
+      <figure
+        class="img-center"
+        role="group"
+        aria-describedby="caption-Random position off screen:SinglePoint = True;Circular = False;">
+        <img
+          title="Spawning objects at a random position around a target"
+          loading="lazy"
+          decoding="async"
+          class="img img-fluid "
+          width="802"
+          height="528"
+          src="/images/blog/randomPosition/OutOfScreenPoint_huaf34fbf3356fec395b028e0610cff063_26116_802x528_fill_q100_lanczos_smart1.JPG"
+          alt="Spawning objects at a random position around a target"
+          onerror="this.onerror='null';this.src='\/images\/blog\/randomPosition\/OutOfScreenPoint_huaf34fbf3356fec395b028e0610cff063_26116_802x528_fill_q100_lanczos_smart1.JPG'" />
+        <figcaption id="caption-Random position off screen:SinglePoint = True;Circular = False;">
+          Random position off screen:<br>SinglePoint = True;<br>Circular = False;
+        </figcaption>
+      </figure>
+    
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+
+    
+    
+
+    
+    
+      <figure
+        class="img-center"
+        role="group"
+        aria-describedby="caption-Random position off screen:SinglePoint = True;Circular = True;">
+        <img
+          title="Spawning objects at a random position around a target"
+          loading="lazy"
+          decoding="async"
+          class="img img-fluid  ms-1 "
+          width="760"
+          height="706"
+          src="/images/blog/randomPosition/OutOfScreenCircularPoint_huaf34fbf3356fec395b028e0610cff063_32494_760x706_fill_q100_lanczos_smart1.JPG"
+          alt="Spawning objects at a random position around a target"
+          onerror="this.onerror='null';this.src='\/images\/blog\/randomPosition\/OutOfScreenCircularPoint_huaf34fbf3356fec395b028e0610cff063_32494_760x706_fill_q100_lanczos_smart1.JPG'" />
+        <figcaption id="caption-Random position off screen:SinglePoint = True;Circular = True;">
+          Random position off screen:<br>SinglePoint = True;<br>Circular = True;
+        </figcaption>
+      </figure>
+    
+
+  
+  
+
+
+
+
+
+
+
+</div>
+<p>As you can see, the points are always located at half the height/width. If this function is still unclear, I suggest looking directly in the code.
+All in all, this was quite a lot of information at once. Use the <a href="https://github.com/GamesAndCode/RandomSpawnPosition/blob/main/Assets/Scripts/Spawner.cs"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Spawner class</a>
+ to play around with the different methods. If you have any more questions, feel free to ask them in the comments. The next chapter on onscreen spawning will be easier.</p>
+<h2 id="random-position-on-screen">Random position on screen</h2>
+<p>In the last chapter we already saw how to use a negative AdditonalDistance value to get a position inside the screen with the <em>public Vector2 OutOfScreen()</em> method.
+Getting a random position on the screen is quite simple compared to the previous methods. We just need to calculate a position between each screen boundary.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> Vector2 OnScreen()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    screenBorder.CalculateScreenBorders();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> Vector2(Random.Range(screenBorder.BottomLeft.x, screenBorder.BottomRight.x), Random.Range(screenBorder.BottomLeft.y, screenBorder.TopLeft.y));
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The simulation of this approach looks like this:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+    
+    
+
+    
+    
+      <figure
+        class="img-center"
+        role="group"
+        aria-describedby="caption-Random position on screen">
+        <img
+          title="Spawning objects at a random position on screen"
+          loading="lazy"
+          decoding="async"
+          class="img img-fluid "
+          width="1280"
+          height="720"
+          src="/images/blog/randomPosition/OnScreen.gif"
+          alt="Spawning objects at a random position on screen"
+          onerror="this.onerror='null';this.src=''" />
+        <figcaption id="caption-Random position on screen">
+          Random position on screen
+        </figcaption>
+      </figure>
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Another common way to spawn objects is to spawn them around a target, for example the player. This can be especially helpful when, for example, enemies, spells, or special effects are supposed to appear near the player. Unity&rsquo;s Random class has a method called <a href="https://docs.unity3d.com/2023.3/Documentation/ScriptReference/Random-insideUnitCircle.html"
+
+
+
+
+ target="_blank"
+ 
+
+
+>insideUnitCircle</a>
+, which returns a random point inside or on a circle with the radius of 1. We can use this method and multiply it with a desired radius. Also we have to add the position of the target.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> Vector2 AroundTargetInCircle(GameObject target, <span style="color:#66d9ef">float</span> radius)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (Random.insideUnitCircle * radius) + (Vector2)target.transform.position;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>If we want the random position to always have the same distance to the target, we just have to normalize the result of the Random.insideUnitCircle method. This way we always get a Vector2 with a magnitude of 1.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> Vector2 AroundTargetOnCircle(GameObject target, <span style="color:#66d9ef">float</span> radius)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (Random.insideUnitCircle.normalized * radius) + (Vector2)target.transform.position;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Both options are shown in the following figures. The white box in the center of the screen symbolizes the target.</p>
+<div style="display: flex; justify-content: space-evenly;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+    
+    
+
+    
+    
+      <figure
+        class="img-center"
+        role="group"
+        aria-describedby="caption-Random position around the target inside of the circle">
+        <img
+          title="Spawning objects at a random position around a target"
+          loading="lazy"
+          decoding="async"
+          class="img img-fluid "
+          width="400"
+          height="720"
+          src="/images/blog/randomPosition/AroundTargetInCircle.gif"
+          alt="Spawning objects at a random position around a target"
+          onerror="this.onerror='null';this.src=''" />
+        <figcaption id="caption-Random position around the target inside of the circle">
+          Random position around the target inside of the circle
+        </figcaption>
+      </figure>
+    
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+    
+    
+
+    
+    
+      <figure
+        class="img-center"
+        role="group"
+        aria-describedby="caption-Random position around the target on the circle">
+        <img
+          title="Spawning objects at a random position around a target"
+          loading="lazy"
+          decoding="async"
+          class="img img-fluid "
+          width="400"
+          height="720"
+          src="/images/blog/randomPosition/AroundTargetOnCircle.gif"
+          alt="Spawning objects at a random position around a target"
+          onerror="this.onerror='null';this.src=''" />
+        <figcaption id="caption-Random position around the target on the circle">
+          Random position around the target on the circle
+        </figcaption>
+      </figure>
+    
+
+  
+  
+
+
+
+
+
+
+
+</div>
+<p>In our method <em>AroundTargetInCircle</em> it is possible that objects also appear on the target or directly next to it. However, this is not always intentional. For example, it makes no sense if an enemy spawns right next to the player and the player has no time to react. With a small adjustment in the code we can add a safety distance between the target and the spawn area. So besides the outer radius we need an inner radius that defines the safety distance. Because the spawnarea now looks like a donut, we also call the method after it:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> Vector2 AroundTargetInDonut(GameObject target, <span style="color:#66d9ef">float</span> innerRadius, <span style="color:#66d9ef">float</span> outerRadius)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    Vector2 position = AroundTargetInCircle(target, outerRadius - innerRadius);
+</span></span><span style="display:flex;"><span>    Vector2 direction = (position - (Vector2)target.transform.position).normalized;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> position + direction * innerRadius;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>As you may have noticed, we use a little trick for this method. We first get a random point around the target, subtracting the safety distance from the radius. We add this safety distance back at the end. This creates an empty area around the target. An example can be seen in the following figure:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+    
+    
+
+    
+    
+      <figure
+        class="img-center"
+        role="group"
+        aria-describedby="caption-Random position around target with safety distance">
+        <img
+          title="Spawning objects at a random position around a target with additional space"
+          loading="lazy"
+          decoding="async"
+          class="img img-fluid "
+          width="600"
+          height="720"
+          src="/images/blog/randomPosition/AroundTargetInDonut.gif"
+          alt="Spawning objects at a random position around a target with additional space"
+          onerror="this.onerror='null';this.src=''" />
+        <figcaption id="caption-Random position around target with safety distance">
+          Random position around target with safety distance
+        </figcaption>
+      </figure>
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Having the random position is a good start, but what now? There are several ways to spawn objects in Unity. The most basic way is to use the instantiate method. Depending on the game you are making, you may want to consider a different approach, such as an object pool. For further reading I recommend an <a href="https://gamedevbeginner.com/how-to-spawn-an-object-in-unity-using-instantiate/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>article by gamedevbeginner</a>
+.<br>
+I hope you enjoyed the article and learned a few new things. Since this is one of my first technical posts, I&rsquo;m especially happy about constructive feedback. Thanks for reading.</p>
+<h2 id="and-now-you">And now you!</h2>
+<ul>
+<li>Get the <a href="https://github.com/GamesAndCode/RandomSpawnPosition"
+
+
+
+
+ target="_blank"
+ 
+
+
+>code template</a>
+</li>
+<li>Ask your questions in the comments section.</li>
+<li>Missing some additional spawn options?</li>
+<li>Interested in a post about an enemy spawner?</li>
+</ul>
+
+          </div>
+          <div class="row items-start justify-between">
+            <div class="lg:col-5 mb-10 flex items-center lg:mb-0">
+              <h5 class="mr-3">Tags:</h5>
+              <ul>
+                
+                
+                  <li class="inline-block">
+                    <a
+                      class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                      href="/tags/template/">
+                      Template
+                    </a>
+                  </li>
+                
+                  <li class="inline-block">
+                    <a
+                      class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                      href="/tags/code/">
+                      Code
+                    </a>
+                  </li>
+                
+                  <li class="inline-block">
+                    <a
+                      class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                      href="/tags/unity/">
+                      Unity
+                    </a>
+                  </li>
+                
+                  <li class="inline-block">
+                    <a
+                      class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                      href="/tags/2d/">
+                      2d
+                    </a>
+                  </li>
+                
+                  <li class="inline-block">
+                    <a
+                      class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                      href="/tags/spawning/">
+                      Spawning
+                    </a>
+                  </li>
+                
+                  <li class="inline-block">
+                    <a
+                      class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                      href="/tags/tutorial/">
+                      Tutorial
+                    </a>
+                  </li>
+                
+              </ul>
+            </div>
+          </div>
+          
+          
+            <div class="mt-20">
+              <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "gameandcode" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+          
+        </article>
+      </div>
+
+      
+      
+      
+      
+        <div class="section pb-0">
+          <h2 class="h3 mb-12">Related Posts</h2>
+          <div class="row">
+            
+              <div class="lg:col-4">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+      
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+        
+
+
+        <picture>
+          <source
+            
+              srcset="/images/blog/KenneyJam/KenneyJamLogo_hu2ae239ad31eb85dc654d6dd34ede7829_9686_545x0_resize_q90_h2_lanczos_3.webp"
+            
+            media="(max-width: 575px)" />
+          <source
+            
+              srcset="/images/blog/KenneyJam/KenneyJamLogo_hu2ae239ad31eb85dc654d6dd34ede7829_9686_600x0_resize_q90_h2_lanczos_3.webp"
+            
+            media="(max-width: 767px)" />
+          <source
+            
+              srcset="/images/blog/KenneyJam/KenneyJamLogo_hu2ae239ad31eb85dc654d6dd34ede7829_9686_700x0_resize_q90_h2_lanczos_3.webp"
+            
+            media="(max-width: 991px)" />
+          <source
+            
+              srcset="/images/blog/KenneyJam/KenneyJamLogo_hu2ae239ad31eb85dc654d6dd34ede7829_9686_1110x0_resize_q90_h2_lanczos_3.webp"
+             />
+          <img
+            
+              loading="lazy" decoding="async"
+              src="/images/blog/KenneyJam/KenneyJamLogo_hu2ae239ad31eb85dc654d6dd34ede7829_9686_1110x0_resize_lanczos_3.png"
+            class=" mb-3 max-h-32 w-auto rounded img"
+            alt="Kenney Jam 2023 recap"
+            width="530"
+            height="200" />
+        </picture>
+      
+      
+    
+    
+  
+
+
+  
+
+
+  
+  <h4 class="mb-3">
+    <a href="/blog/kenneyjampost/">
+      Kenney Jam 2023 recap
+    </a>
+  </h4>
+  
+  <p class="mb-2">Game jams are a great way to improve your programming and game design skills. Read more about my development process and the lessons learned.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/kenneyjampost/">
+    Read More
+  </a>
+  <ul class="mt-2">
+    <li class="mr-4 inline-block">
+      <i class="fa-regular fa-folder mr-2"></i>
+      
+      
+        <a
+          href="/categories/game-jam/"
+          class="ms-1"
+          >Game jam
+        </a>
+      
+    </li>
+  </ul>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+      
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+        
+
+
+        <picture>
+          <source
+            
+              srcset="/images/blog/gameStudioJourney/Thumbnail-BecomingSelfEmployed_huecfc1063ed87334f55cc177350fbde43_37362_545x0_resize_q90_h2_lanczos_3.webp"
+            
+            media="(max-width: 575px)" />
+          <source
+            
+              srcset="/images/blog/gameStudioJourney/Thumbnail-BecomingSelfEmployed_huecfc1063ed87334f55cc177350fbde43_37362_600x0_resize_q90_h2_lanczos_3.webp"
+            
+            media="(max-width: 767px)" />
+          <source
+            
+              srcset="/images/blog/gameStudioJourney/Thumbnail-BecomingSelfEmployed_huecfc1063ed87334f55cc177350fbde43_37362_700x0_resize_q90_h2_lanczos_3.webp"
+            
+            media="(max-width: 991px)" />
+          <source
+            
+              srcset="/images/blog/gameStudioJourney/Thumbnail-BecomingSelfEmployed_huecfc1063ed87334f55cc177350fbde43_37362_1110x0_resize_q90_h2_lanczos_3.webp"
+             />
+          <img
+            
+              loading="lazy" decoding="async"
+              src="/images/blog/gameStudioJourney/Thumbnail-BecomingSelfEmployed_huecfc1063ed87334f55cc177350fbde43_37362_1110x0_resize_lanczos_3.png"
+            class=" mb-3 max-h-32 w-auto rounded img"
+            alt="One of those &#34;I quit my job&#34; posts"
+            width="1200"
+            height="627" />
+        </picture>
+      
+      
+    
+    
+  
+
+
+  
+
+
+  
+  <h4 class="mb-3">
+    <a href="/blog/indiedevjourney1/">
+      One of those &#34;I quit my job&#34; posts
+    </a>
+  </h4>
+  
+  <p class="mb-2">Read about my first steps torwards becoming an indie game developer</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/indiedevjourney1/">
+    Read More
+  </a>
+  <ul class="mt-2">
+    <li class="mr-4 inline-block">
+      <i class="fa-regular fa-folder mr-2"></i>
+      
+      
+        <a
+          href="/categories/indie-dev-journey/"
+          class="ms-1"
+          >Indie dev journey
+        </a>
+      
+    </li>
+  </ul>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+      
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+        
+
+
+        <picture>
+          <source
+            
+              srcset="/images/blog/adventCalendar/AdventCalendar_Cover_hu106ea4f31cfcdfd992b33787ec63d83c_3045231_545x0_resize_q90_h2_lanczos_3.webp"
+            
+            media="(max-width: 575px)" />
+          <source
+            
+              srcset="/images/blog/adventCalendar/AdventCalendar_Cover_hu106ea4f31cfcdfd992b33787ec63d83c_3045231_600x0_resize_q90_h2_lanczos_3.webp"
+            
+            media="(max-width: 767px)" />
+          <source
+            
+              srcset="/images/blog/adventCalendar/AdventCalendar_Cover_hu106ea4f31cfcdfd992b33787ec63d83c_3045231_700x0_resize_q90_h2_lanczos_3.webp"
+            
+            media="(max-width: 991px)" />
+          <source
+            
+              srcset="/images/blog/adventCalendar/AdventCalendar_Cover_hu106ea4f31cfcdfd992b33787ec63d83c_3045231_1110x0_resize_q90_h2_lanczos_3.webp"
+             />
+          <img
+            
+              loading="lazy" decoding="async"
+              src="/images/blog/adventCalendar/AdventCalendar_Cover_hu106ea4f31cfcdfd992b33787ec63d83c_3045231_1110x0_resize_lanczos_3.png"
+            class=" mb-3 max-h-32 w-auto rounded img"
+            alt="Advent calendar template"
+            width="1680"
+            height="939" />
+        </picture>
+      
+      
+    
+    
+  
+
+
+  
+
+
+  
+  <h4 class="mb-3">
+    <a href="/blog/adventcalendar2023/">
+      Advent calendar template
+    </a>
+  </h4>
+  
+  <p class="mb-2">Learn how to use the advent calendar template in Unity2D (no coding required)</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/adventcalendar2023/">
+    Read More
+  </a>
+  <ul class="mt-2">
+    <li class="mr-4 inline-block">
+      <i class="fa-regular fa-folder mr-2"></i>
+      
+      
+        <a
+          href="/categories/tutorial/"
+          class="ms-1"
+          >Tutorial
+            , 
+          
+        </a>
+      
+        <a
+          href="/categories/template/"
+          class="ms-1"
+          >Template
+        </a>
+      
+    </li>
+  </ul>
+</div>
+
+              </div>
+            
+          </div>
+        </div>
+      
+    </div>
+  </section>
+
+
+  
+  <script defer src="/plugins/prism/prism.js"></script>
+
+
+
+    </main>
+
+    
+    
+      <footer class="bg-theme-light dark:bg-darkmode-theme-light">
+  <div class="container">
+    <div class="row items-center py-10">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        
+      </div>
+      <div class="lg:col-6 mb-8 text-center lg:mb-0">
+        <ul>
+          
+          <li class="m-3 inline-block">
+            <a  href="
+                  /privacy-policy/
+                ">Privacy Policy</a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
+          
+          <li>
+            <a target="_blank" aria-label="twitter" rel="nofollow noopener" href="https://twitter.com/GameAndCode">
+              <i class="fab fa-x-twitter"></i>
+            </a>
+          </li>
+          
+          <li>
+            <a target="_blank" aria-label="github" rel="nofollow noopener" href="https://github.com/GamesAndCode?tab=repositories">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+</footer>
+      
+
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+
+
+
+
+
+
+
+
+<script
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script.js"></script>
+
+
+
+<script>
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register("/service-worker.js");}
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
