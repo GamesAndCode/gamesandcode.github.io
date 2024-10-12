@@ -1,2 +1,174 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>GameAndCode</title><link>https://gameandcode.com/</link><description>Recent content on GameAndCode</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 16 Aug 2024 05:00:00 +0000</lastBuildDate><atom:link href="https://gameandcode.com/index.xml" rel="self" type="application/rss+xml"/><item><title>GameDev mind map</title><link>https://gameandcode.com/blog/gamedevmindmap/</link><pubDate>Fri, 16 Aug 2024 05:00:00 +0000</pubDate><guid>https://gameandcode.com/blog/gamedevmindmap/</guid><description>Special announcement I am pleased to announce that a Discord server now exists.</description></item><item><title>Devs That Jam #3</title><link>https://gameandcode.com/blog/devsthatjam3/</link><pubDate>Mon, 08 Jul 2024 05:00:00 +0000</pubDate><guid>https://gameandcode.com/blog/devsthatjam3/</guid><description>Introduction At the end of June 2024 I participated in another game jam.</description></item><item><title>One of those "I quit my job" posts</title><link>https://gameandcode.com/blog/indiedevjourney1/</link><pubDate>Mon, 17 Jun 2024 14:12:00 +0000</pubDate><guid>https://gameandcode.com/blog/indiedevjourney1/</guid><description>Introduction I recently decided to take game development more seriously. This blog post describes my first steps to becoming self-employed.</description></item><item><title>Advent calendar template</title><link>https://gameandcode.com/blog/adventcalendar2023/</link><pubDate>Sun, 19 Nov 2023 05:00:00 +0000</pubDate><guid>https://gameandcode.com/blog/adventcalendar2023/</guid><description>Your browser does not support the video tag. Advent calendar preview</description></item><item><title>Advent calendar template</title><link>https://gameandcode.com/code/adventcalendar/</link><pubDate>Sun, 19 Nov 2023 05:00:00 +0000</pubDate><guid>https://gameandcode.com/code/adventcalendar/</guid><description/></item><item><title>Random position spawning</title><link>https://gameandcode.com/blog/objectspawner/</link><pubDate>Fri, 13 Oct 2023 05:00:00 +0000</pubDate><guid>https://gameandcode.com/blog/objectspawner/</guid><description>Table of Contents Introduction Random position offscreen Random position on screen And now you!</description></item><item><title>Random position spawner</title><link>https://gameandcode.com/code/randomposition/</link><pubDate>Tue, 03 Oct 2023 05:00:00 +0000</pubDate><guid>https://gameandcode.com/code/randomposition/</guid><description/></item><item><title>Kenney Jam 2023 recap</title><link>https://gameandcode.com/blog/kenneyjampost/</link><pubDate>Fri, 08 Sep 2023 05:00:00 +0000</pubDate><guid>https://gameandcode.com/blog/kenneyjampost/</guid><description>Table of Contents Introduction Game concept First day (Basic implementation) Second day (Look and feel) Third day (Itch.</description></item><item><title>Space exploration - Kenney Jam</title><link>https://gameandcode.com/code/kenneyjam/</link><pubDate>Fri, 08 Sep 2023 05:00:00 +0000</pubDate><guid>https://gameandcode.com/code/kenneyjam/</guid><description/></item><item><title>Comment policy</title><link>https://gameandcode.com/comment-policy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gameandcode.com/comment-policy/</guid><description>Welcome to Game and code! We&amp;rsquo;re thrilled to have you as part of our community.</description></item><item><title>Elements</title><link>https://gameandcode.com/elements/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gameandcode.com/elements/</guid><description>Table of Contents Heading 2 Heading 3 Heading 4 Heading 5 Emphasis Button Link Paragraph Ordered List Unordered List Notice Tab Accordions Code and Syntax Highlighting Blockquote Tables Image Gallery Slider Youtube video Custom video Here is an example of headings.</description></item><item><title>Game projects</title><link>https://gameandcode.com/about/game-projects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gameandcode.com/about/game-projects/</guid><description>Zodiac Quest My current project is a space strategy, roguelike game.</description></item><item><title>Privacy policy</title><link>https://gameandcode.com/privacy-policy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gameandcode.com/privacy-policy/</guid><description>Last updated September 03, 2023
-This privacy notice, describes how and why we might collect, store, use, and/or share (&amp;quot;process&amp;quot;) your information when you use our services (&amp;quot;Services&amp;quot;), such as when you:</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>GameAndCode</title><link>https://gameandcode.com/</link><description>Recent content on GameAndCode</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 16 Aug 2024 05:00:00 +0000</lastBuildDate><atom:link href="https://gameandcode.com/index.xml" rel="self" type="application/rss+xml"/><item><title>GameDev mind map</title><link>https://gameandcode.com/blog/gamedevmindmap/</link><pubDate>Fri, 16 Aug 2024 05:00:00 +0000</pubDate><guid>https://gameandcode.com/blog/gamedevmindmap/</guid><description>&lt;h2 id="special-announcement">Special announcement&lt;/h2>
+&lt;p>I am pleased to announce that a &lt;a href="https://discord.gg/Nbjqh3fdV4"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Discord server&lt;/a> now exists. I would be happy to meet a few people. You can expect the latest game dev news and resources. Get feedback for your projects or just talk about games. I will also post news about my upcoming games. You will also be one of the first to get the chance to test them.&lt;/p></description></item><item><title>Devs That Jam #3</title><link>https://gameandcode.com/blog/devsthatjam3/</link><pubDate>Mon, 08 Jul 2024 05:00:00 +0000</pubDate><guid>https://gameandcode.com/blog/devsthatjam3/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>At the end of June 2024 I participated in another game jam. This time it was &lt;a href="https://www.devsthatjam.co.uk/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Devs That Jam&lt;/a>, which is a 36 hour event. &lt;strong>We actually won the jam!&lt;/strong>&lt;/p></description></item><item><title>One of those "I quit my job" posts</title><link>https://gameandcode.com/blog/indiedevjourney1/</link><pubDate>Mon, 17 Jun 2024 14:12:00 +0000</pubDate><guid>https://gameandcode.com/blog/indiedevjourney1/</guid><description>&lt;h3 id="introduction">Introduction&lt;/h3>
+&lt;p>I recently decided to take game development more seriously. This blog post describes my first steps to becoming self-employed.&lt;/p></description></item><item><title>Advent calendar template</title><link>https://gameandcode.com/blog/adventcalendar2023/</link><pubDate>Sun, 19 Nov 2023 05:00:00 +0000</pubDate><guid>https://gameandcode.com/blog/adventcalendar2023/</guid><description>&lt;video
+ width="100%"
+ height="auto"
+ 
+ 
+ 
+ controls
+ 
+ class="rounded-lg"
+ style="max-width:100%">
+ &lt;source src="https://gameandcode.com/videos/advent-calendar/AdventCalendarPreview.mp4" type="video/mp4" />
+ Your browser does not support the video tag.
+ &lt;/video>
+
+
+&lt;p class=text-center>Advent calendar preview&lt;/p></description></item><item><title>Advent calendar template</title><link>https://gameandcode.com/code/adventcalendar/</link><pubDate>Sun, 19 Nov 2023 05:00:00 +0000</pubDate><guid>https://gameandcode.com/code/adventcalendar/</guid><description/></item><item><title>Random position spawning</title><link>https://gameandcode.com/blog/objectspawner/</link><pubDate>Fri, 13 Oct 2023 05:00:00 +0000</pubDate><guid>https://gameandcode.com/blog/objectspawner/</guid><description>&lt;details class="table-of-content ">
+ &lt;summary>
+ 
+ Table of Contents
+ 
+ &lt;/summary>
+ &lt;nav id="TableOfContents">
+ &lt;ol>
+ &lt;li>&lt;a href="#introduction">Introduction&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#random-position-offscreen">Random position offscreen&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#random-position-on-screen">Random position on screen&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#and-now-you">And now you!&lt;/a>&lt;/li>
+ &lt;/ol>
+&lt;/nav>
+&lt;/details>
+
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>One of the key elements that contributes to the interactivity of a game is the ability to seamlessly spawn objects into the game world. Whether it&amp;rsquo;s an enemy unit stepping out of the shadows, power-ups magically appearing, or obstacles falling from the sky, the art of spawning objects is a fundamental skill for game developers.
+In this blog post I will explain how to spawn an object at a random position on or off the screen in Unity2D. You can download the code on &lt;a href="https://github.com/GamesAndCode/RandomSpawnPosition"
+
+
+
+
+ target="_blank"
+ 
+
+
+>github&lt;/a> or download a Unity package in the &lt;a href="https://gameandcode.com/code"
+
+
+
+ 
+
+
+>Code section&lt;/a> to follow along. There is a class called &lt;a href="https://github.com/GamesAndCode/RandomSpawnPosition/blob/main/Assets/Scripts/Spawner.cs"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Spawner&lt;/a> that is associated with a game object in the scene. You can use it to play around with the different methods.&lt;/p></description></item><item><title>Random position spawner</title><link>https://gameandcode.com/code/randomposition/</link><pubDate>Tue, 03 Oct 2023 05:00:00 +0000</pubDate><guid>https://gameandcode.com/code/randomposition/</guid><description/></item><item><title>Kenney Jam 2023 recap</title><link>https://gameandcode.com/blog/kenneyjampost/</link><pubDate>Fri, 08 Sep 2023 05:00:00 +0000</pubDate><guid>https://gameandcode.com/blog/kenneyjampost/</guid><description>&lt;details class="table-of-content ">
+ &lt;summary>
+ 
+ Table of Contents
+ 
+ &lt;/summary>
+ &lt;nav id="TableOfContents">
+ &lt;ol>
+ &lt;li>&lt;a href="#introduction">Introduction&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#game-concept">Game concept&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#first-day-basic-implementation">First day (Basic implementation)&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#second-day-look-and-feel">Second day (Look and feel)&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#third-day-itchio-page-and-polish">Third day (Itch.io page and polish)&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#result">Result&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#lessons-learned">Lessons learned&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#and-now-you">And now you!&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#screenshots">Screenshots&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#bibliography">Bibliography&lt;/a>&lt;/li>
+ &lt;/ol>
+&lt;/nav>
+&lt;/details>
+
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>Programming a game over a long period of time can be very exhausting. Many indie game developers give up their games during the development process. One reason might be, that the games are too big or too complex to be handled solo.&lt;br>
+Game Jams in contrast, give only a small time period to finish a game. The result might only be a low polished or unfinished game, but there is great potential. Firstly the Game jam forces to think small and not to waste time on every idea, that could be a nice feature. Second, game Jams are a great way to test and enhance your programming and game design skills. Programming is a path of consistent learning. Especially making video games reveals many new aspects to learn every time you do it. Working on a project for a long time sometimes makes you rewrite your initial code because your skills have been already improved again. In conclusion it is sometimes helpful to learn in a smaller project scope.&lt;br>
+To do that I participated in the KenneyJam 2023. The Jam was 54 hours long and the theme was exploration. It was revealed at the start of the jam. An additional restriction was only to use assets from the organisers website (&lt;a href="https://kenney.nl/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>kenney.nl&lt;/a>). In the following I would like to present the work process of the small space game I created during the jam. You can find my experiences and the full source code at the end of the post.&lt;/p></description></item><item><title>Space exploration - Kenney Jam</title><link>https://gameandcode.com/code/kenneyjam/</link><pubDate>Fri, 08 Sep 2023 05:00:00 +0000</pubDate><guid>https://gameandcode.com/code/kenneyjam/</guid><description/></item><item><title>Comment policy</title><link>https://gameandcode.com/comment-policy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gameandcode.com/comment-policy/</guid><description>&lt;p>&lt;strong>Welcome to Game and code!&lt;/strong> We&amp;rsquo;re thrilled to have you as part of our community. Our goal is to create a respectful and engaging environment where everyone can share their thoughts and ideas. To ensure a positive experience for all, please read and abide by our Comment Policy:&lt;/p></description></item><item><title>Elements</title><link>https://gameandcode.com/elements/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gameandcode.com/elements/</guid><description>&lt;details class="table-of-content ">
+ &lt;summary>
+ 
+ Table of Contents
+ 
+ &lt;/summary>
+ &lt;nav id="TableOfContents">
+ &lt;ol>
+ &lt;li>&lt;a href="#heading-2">Heading 2&lt;/a>
+ &lt;ol>
+ &lt;li>&lt;a href="#heading-3">Heading 3&lt;/a>
+ &lt;ol>
+ &lt;li>&lt;a href="#heading-4">Heading 4&lt;/a>
+ &lt;ol>
+ &lt;li>&lt;a href="#heading-5">Heading 5&lt;/a>&lt;/li>
+ &lt;/ol>
+ &lt;/li>
+ &lt;/ol>
+ &lt;/li>
+ &lt;li>&lt;a href="#emphasis">Emphasis&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#button">Button&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#link">Link&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#paragraph">Paragraph&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#ordered-list">Ordered List&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#unordered-list">Unordered List&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#notice">Notice&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#tab">Tab&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#accordions">Accordions&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#code-and-syntax-highlighting">Code and Syntax Highlighting&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#blockquote">Blockquote&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#tables">Tables&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#image">Image&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#gallery">Gallery&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#slider">Slider&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#youtube-video">Youtube video&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#custom-video">Custom video&lt;/a>&lt;/li>
+ &lt;/ol>
+ &lt;/li>
+ &lt;/ol>
+&lt;/nav>
+&lt;/details>
+
+&lt;p>Here is an example of headings. You can use this heading by the following markdown rules. For example: use &lt;code>#&lt;/code> for heading 1 and use &lt;code>######&lt;/code> for heading 6.&lt;/p></description></item><item><title>Game projects</title><link>https://gameandcode.com/about/game-projects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gameandcode.com/about/game-projects/</guid><description>&lt;h1 id="zodiac-quest-hobby-project-2023">Zodiac Quest (hobby project 2023)&lt;/h1>
+&lt;p>A space strategy, roguelike game. Lost in time and space, you travel to planets and stars to gather resources for your ship. Unfortunately, every journey costs you fuel and damages your ship. You must choose your path wisely to travel through space as long as you can. A updated version includes stuff, like different types of planets, obstacles and special events. A basic version of it can be played on &lt;a href="https://radiantdarkness.itch.io/space-exploration"
+
+
+
+
+ target="_blank"
+ 
+
+
+>itch.io&lt;/a>. I also wrote about the creation of the basic version in my &lt;a href="https://gameandcode.com/blog/kenneyjampost/"
+
+
+
+ 
+
+
+>Kenney Jam post&lt;/a>.&lt;/p></description></item><item><title>Privacy policy</title><link>https://gameandcode.com/privacy-policy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gameandcode.com/privacy-policy/</guid><description>&lt;p>&lt;strong>Last updated October 12, 2024&lt;/strong>&lt;/p>
+&lt;p>This privacy notice, describes how and why we might collect, store, use, and/or share (&amp;quot;&lt;strong>process&lt;/strong>&amp;quot;) your information when you use our services (&amp;quot;&lt;strong>Services&lt;/strong>&amp;quot;), such as when you:&lt;/p></description></item></channel></rss>

@@ -1,1 +1,45 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>event on GameAndCode</title><link>https://gameandcode.com/tags/event/</link><description>Recent content in event on GameAndCode</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 08 Jul 2024 05:00:00 +0000</lastBuildDate><atom:link href="https://gameandcode.com/tags/event/index.xml" rel="self" type="application/rss+xml"/><item><title>Devs That Jam #3</title><link>https://gameandcode.com/blog/devsthatjam3/</link><pubDate>Mon, 08 Jul 2024 05:00:00 +0000</pubDate><guid>https://gameandcode.com/blog/devsthatjam3/</guid><description>Introduction At the end of June 2024 I participated in another game jam.</description></item><item><title>Kenney Jam 2023 recap</title><link>https://gameandcode.com/blog/kenneyjampost/</link><pubDate>Fri, 08 Sep 2023 05:00:00 +0000</pubDate><guid>https://gameandcode.com/blog/kenneyjampost/</guid><description>Table of Contents Introduction Game concept First day (Basic implementation) Second day (Look and feel) Third day (Itch.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Event on GameAndCode</title><link>https://gameandcode.com/tags/event/</link><description>Recent content in Event on GameAndCode</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Mon, 08 Jul 2024 05:00:00 +0000</lastBuildDate><atom:link href="https://gameandcode.com/tags/event/index.xml" rel="self" type="application/rss+xml"/><item><title>Devs That Jam #3</title><link>https://gameandcode.com/blog/devsthatjam3/</link><pubDate>Mon, 08 Jul 2024 05:00:00 +0000</pubDate><guid>https://gameandcode.com/blog/devsthatjam3/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>At the end of June 2024 I participated in another game jam. This time it was &lt;a href="https://www.devsthatjam.co.uk/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Devs That Jam&lt;/a>, which is a 36 hour event. &lt;strong>We actually won the jam!&lt;/strong>&lt;/p></description></item><item><title>Kenney Jam 2023 recap</title><link>https://gameandcode.com/blog/kenneyjampost/</link><pubDate>Fri, 08 Sep 2023 05:00:00 +0000</pubDate><guid>https://gameandcode.com/blog/kenneyjampost/</guid><description>&lt;details class="table-of-content ">
+ &lt;summary>
+ 
+ Table of Contents
+ 
+ &lt;/summary>
+ &lt;nav id="TableOfContents">
+ &lt;ol>
+ &lt;li>&lt;a href="#introduction">Introduction&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#game-concept">Game concept&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#first-day-basic-implementation">First day (Basic implementation)&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#second-day-look-and-feel">Second day (Look and feel)&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#third-day-itchio-page-and-polish">Third day (Itch.io page and polish)&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#result">Result&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#lessons-learned">Lessons learned&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#and-now-you">And now you!&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#screenshots">Screenshots&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#bibliography">Bibliography&lt;/a>&lt;/li>
+ &lt;/ol>
+&lt;/nav>
+&lt;/details>
+
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>Programming a game over a long period of time can be very exhausting. Many indie game developers give up their games during the development process. One reason might be, that the games are too big or too complex to be handled solo.&lt;br>
+Game Jams in contrast, give only a small time period to finish a game. The result might only be a low polished or unfinished game, but there is great potential. Firstly the Game jam forces to think small and not to waste time on every idea, that could be a nice feature. Second, game Jams are a great way to test and enhance your programming and game design skills. Programming is a path of consistent learning. Especially making video games reveals many new aspects to learn every time you do it. Working on a project for a long time sometimes makes you rewrite your initial code because your skills have been already improved again. In conclusion it is sometimes helpful to learn in a smaller project scope.&lt;br>
+To do that I participated in the KenneyJam 2023. The Jam was 54 hours long and the theme was exploration. It was revealed at the start of the jam. An additional restriction was only to use assets from the organisers website (&lt;a href="https://kenney.nl/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>kenney.nl&lt;/a>). In the following I would like to present the work process of the small space game I created during the jam. You can find my experiences and the full source code at the end of the post.&lt;/p></description></item></channel></rss>

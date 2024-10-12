@@ -1,1 +1,59 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tutorial on GameAndCode</title><link>https://gameandcode.com/categories/tutorial/</link><description>Recent content in Tutorial on GameAndCode</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 19 Nov 2023 05:00:00 +0000</lastBuildDate><atom:link href="https://gameandcode.com/categories/tutorial/index.xml" rel="self" type="application/rss+xml"/><item><title>Advent calendar template</title><link>https://gameandcode.com/blog/adventcalendar2023/</link><pubDate>Sun, 19 Nov 2023 05:00:00 +0000</pubDate><guid>https://gameandcode.com/blog/adventcalendar2023/</guid><description>Your browser does not support the video tag. Advent calendar preview</description></item><item><title>Random position spawning</title><link>https://gameandcode.com/blog/objectspawner/</link><pubDate>Fri, 13 Oct 2023 05:00:00 +0000</pubDate><guid>https://gameandcode.com/blog/objectspawner/</guid><description>Table of Contents Introduction Random position offscreen Random position on screen And now you!</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tutorial on GameAndCode</title><link>https://gameandcode.com/categories/tutorial/</link><description>Recent content in Tutorial on GameAndCode</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sun, 19 Nov 2023 05:00:00 +0000</lastBuildDate><atom:link href="https://gameandcode.com/categories/tutorial/index.xml" rel="self" type="application/rss+xml"/><item><title>Advent calendar template</title><link>https://gameandcode.com/blog/adventcalendar2023/</link><pubDate>Sun, 19 Nov 2023 05:00:00 +0000</pubDate><guid>https://gameandcode.com/blog/adventcalendar2023/</guid><description>&lt;video
+ width="100%"
+ height="auto"
+ 
+ 
+ 
+ controls
+ 
+ class="rounded-lg"
+ style="max-width:100%">
+ &lt;source src="https://gameandcode.com/videos/advent-calendar/AdventCalendarPreview.mp4" type="video/mp4" />
+ Your browser does not support the video tag.
+ &lt;/video>
+
+
+&lt;p class=text-center>Advent calendar preview&lt;/p></description></item><item><title>Random position spawning</title><link>https://gameandcode.com/blog/objectspawner/</link><pubDate>Fri, 13 Oct 2023 05:00:00 +0000</pubDate><guid>https://gameandcode.com/blog/objectspawner/</guid><description>&lt;details class="table-of-content ">
+ &lt;summary>
+ 
+ Table of Contents
+ 
+ &lt;/summary>
+ &lt;nav id="TableOfContents">
+ &lt;ol>
+ &lt;li>&lt;a href="#introduction">Introduction&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#random-position-offscreen">Random position offscreen&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#random-position-on-screen">Random position on screen&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#and-now-you">And now you!&lt;/a>&lt;/li>
+ &lt;/ol>
+&lt;/nav>
+&lt;/details>
+
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>One of the key elements that contributes to the interactivity of a game is the ability to seamlessly spawn objects into the game world. Whether it&amp;rsquo;s an enemy unit stepping out of the shadows, power-ups magically appearing, or obstacles falling from the sky, the art of spawning objects is a fundamental skill for game developers.
+In this blog post I will explain how to spawn an object at a random position on or off the screen in Unity2D. You can download the code on &lt;a href="https://github.com/GamesAndCode/RandomSpawnPosition"
+
+
+
+
+ target="_blank"
+ 
+
+
+>github&lt;/a> or download a Unity package in the &lt;a href="https://gameandcode.com/code"
+
+
+
+ 
+
+
+>Code section&lt;/a> to follow along. There is a class called &lt;a href="https://github.com/GamesAndCode/RandomSpawnPosition/blob/main/Assets/Scripts/Spawner.cs"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Spawner&lt;/a> that is associated with a game object in the scene. You can use it to play around with the different methods.&lt;/p></description></item></channel></rss>
