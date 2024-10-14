@@ -11323,9 +11323,6 @@ input#nav-toggle:checked ~ #nav-menu {
 .max-h-60 {
   max-height: 15rem;
 }
-.max-h-80 {
-  max-height: 20rem;
-}
 .max-h-96 {
   max-height: 24rem;
 }
@@ -11464,9 +11461,6 @@ input#nav-toggle:checked ~ #nav-menu {
 }
 .pb-6 {
   padding-bottom: 1.5rem;
-}
-.ps-4 {
-  padding-inline-start: 1rem;
 }
 .pt-7 {
   padding-top: 1.75rem;
