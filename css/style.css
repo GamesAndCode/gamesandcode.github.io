@@ -12504,6 +12504,65 @@ input#nav-toggle:checked ~ #nav-menu {
 .image-container:hover .hover-links {
   display: block; }
 
+.flicker {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3.2rem;
+  color: #e2e2e2;
+  animation: flicker 3s infinite; }
+
+@keyframes flicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    opacity: 1; }
+  20%,
+  24%,
+  55% {
+    opacity: 0.4; } }
+
+.blur-fade {
+  font-family: 'Unna', serif;
+  font-size: 3rem;
+  color: #fff;
+  opacity: 0;
+  filter: blur(8px);
+  animation: fadeInBlur 1.8s ease-out forwards; }
+
+@keyframes fadeInBlur {
+  to {
+    opacity: 1;
+    filter: blur(0); } }
+
+.glitch {
+  color: white;
+  position: relative; }
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  color: white;
+  background: black;
+  overflow: hidden; }
+
+.glitch::before {
+  top: -2px;
+  left: 2px;
+  color: #ff00c8;
+  clip-path: inset(0 0 50% 0); }
+
+.glitch::after {
+  top: 2px;
+  left: -2px;
+  color: #00fff7;
+  clip-path: inset(50% 0 0 0); }
+
 @media (min-width: 540px) {
 
   .sm\:col-10 {
