@@ -12527,7 +12527,6 @@ input#nav-toggle:checked ~ #nav-menu {
 .blur-fade {
   font-family: 'Unna', serif;
   font-size: 3rem;
-  color: #fff;
   opacity: 0;
   filter: blur(8px);
   animation: fadeInBlur 1.8s ease-out forwards; }
