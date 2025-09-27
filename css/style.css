@@ -12569,16 +12569,13 @@ input#nav-toggle:checked ~ #nav-menu {
     font-weight: bold;
     padding: 60px 20px;
     text-align: center; }
-    .custom-home-style .portfolio img {
-      max-width: 300px;
-      border-radius: 10px; }
     .custom-home-style .portfolio .home-picture {
       display: block;
       margin: 0 auto 24px auto;
       /* Prevent .portfolio img from affecting this image */ }
       .custom-home-style .portfolio .home-picture img {
-        max-width: none !important;
-        border-radius: 0 !important;
+        max-width: auto;
+        border-radius: 5;
         display: block;
         margin: 0 auto;
         transition: transform 0.3s cubic-bezier(0.39, 0.575, 0.565, 1), box-shadow 0.3s; }
