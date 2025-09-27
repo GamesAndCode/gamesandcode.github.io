@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blog on GameAndCode</title><link>https://gameandcode.com/blog/</link><description>Recent content in Blog on GameAndCode</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 16 Aug 2024 05:00:00 +0000</lastBuildDate><atom:link href="https://gameandcode.com/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>GameDev mind map</title><link>https://gameandcode.com/blog/gamedevmindmap/</link><pubDate>Fri, 16 Aug 2024 05:00:00 +0000</pubDate><guid>https://gameandcode.com/blog/gamedevmindmap/</guid><description>&lt;h2 id="special-announcement">Special announcement&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blog on gameandcode</title><link>https://gameandcode.com/blog/</link><description>Recent content in Blog on gameandcode</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 16 Aug 2024 05:00:00 +0000</lastBuildDate><atom:link href="https://gameandcode.com/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>GameDev mind map</title><link>https://gameandcode.com/blog/gamedevmindmap/</link><pubDate>Fri, 16 Aug 2024 05:00:00 +0000</pubDate><guid>https://gameandcode.com/blog/gamedevmindmap/</guid><description>&lt;h2 id="special-announcement">Special announcement&lt;/h2>
 &lt;p>I am pleased to announce that a &lt;a href="https://discord.gg/Nbjqh3fdV4"
 
 
@@ -8,7 +8,19 @@
  
 
 
->Discord server&lt;/a> now exists. I would be happy to meet a few people. You can expect the latest game dev news and resources. Get feedback for your projects or just talk about games. I will also post news about my upcoming games. You will also be one of the first to get the chance to test them.&lt;/p></description></item><item><title>Devs That Jam #3</title><link>https://gameandcode.com/blog/devsthatjam3/</link><pubDate>Mon, 08 Jul 2024 05:00:00 +0000</pubDate><guid>https://gameandcode.com/blog/devsthatjam3/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
+>Discord server&lt;/a> now exists. I would be happy to meet a few people. You can expect the latest game dev news and resources. Get feedback for your projects or just talk about games. I will also post news about my upcoming games. You will also be one of the first to get the chance to test them.&lt;/p>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>This post will give you a quick overview about the game dev mind map I created to organize useful web links.&lt;br>
+&lt;strong>You can find the mind map &lt;a href="https://www.mindmeister.com/app/map/3379044390?t=LLbvOkQUIt"
+
+
+
+
+ target="_blank"
+ 
+
+
+>here&lt;/a>.&lt;/strong>&lt;/p></description></item><item><title>Devs That Jam #3</title><link>https://gameandcode.com/blog/devsthatjam3/</link><pubDate>Mon, 08 Jul 2024 05:00:00 +0000</pubDate><guid>https://gameandcode.com/blog/devsthatjam3/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>At the end of June 2024 I participated in another game jam. This time it was &lt;a href="https://www.devsthatjam.co.uk/"
 
 
@@ -18,8 +30,12 @@
  
 
 
->Devs That Jam&lt;/a>, which is a 36 hour event. &lt;strong>We actually won the jam!&lt;/strong>&lt;/p></description></item><item><title>One of those "I quit my job" posts</title><link>https://gameandcode.com/blog/indiedevjourney1/</link><pubDate>Mon, 17 Jun 2024 14:12:00 +0000</pubDate><guid>https://gameandcode.com/blog/indiedevjourney1/</guid><description>&lt;h3 id="introduction">Introduction&lt;/h3>
-&lt;p>I recently decided to take game development more seriously. This blog post describes my first steps to becoming self-employed.&lt;/p></description></item><item><title>Advent calendar template</title><link>https://gameandcode.com/blog/adventcalendar2023/</link><pubDate>Sun, 19 Nov 2023 05:00:00 +0000</pubDate><guid>https://gameandcode.com/blog/adventcalendar2023/</guid><description>&lt;video
+>Devs That Jam&lt;/a>, which is a 36 hour event. &lt;strong>We actually won the jam!&lt;/strong>&lt;/p>
+&lt;p>If you are not familiar with game jams, here is a brief description:&lt;br>
+Game Jams are creative events where individuals or teams come together to design and develop a complete game in a limited timeframe. These events emphasize collaboration, innovation, and rapid prototyping, and often revolve around a specific theme or challenge. Participants bring diverse skills such as programming, design, art, and music to create unique and often experimental games.&lt;/p></description></item><item><title>One of those "I quit my job" posts</title><link>https://gameandcode.com/blog/indiedevjourney1/</link><pubDate>Mon, 17 Jun 2024 14:12:00 +0000</pubDate><guid>https://gameandcode.com/blog/indiedevjourney1/</guid><description>&lt;h3 id="introduction">Introduction&lt;/h3>
+&lt;p>I recently decided to take game development more seriously. This blog post describes my first steps to becoming self-employed.&lt;/p>
+&lt;h3 id="why-am-i-doing-this">Why am I doing this?&lt;/h3>
+&lt;p>I&amp;rsquo;ve been thinking about starting my own business for a long time. Especially on long evenings when I worked late into the night on games. Now I want to devote my full concentration to game development. Of course, personal freedom and other things that come with being self-employed are also important to me.&lt;/p></description></item><item><title>Advent calendar template</title><link>https://gameandcode.com/blog/adventcalendar2023/</link><pubDate>Sun, 19 Nov 2023 05:00:00 +0000</pubDate><guid>https://gameandcode.com/blog/adventcalendar2023/</guid><description>&lt;video
  width="100%"
  height="auto"
  
@@ -34,7 +50,26 @@
  &lt;/video>
 
 
-&lt;p class=text-center>Advent calendar preview&lt;/p></description></item><item><title>Random position spawning</title><link>https://gameandcode.com/blog/objectspawner/</link><pubDate>Fri, 13 Oct 2023 05:00:00 +0000</pubDate><guid>https://gameandcode.com/blog/objectspawner/</guid><description>&lt;details class="table-of-content ">
+&lt;p class=text-center>Advent calendar preview&lt;/p>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>&lt;strong>Hello fellow game developers!&lt;/strong> This blog post will explain how to use an advent calendar template I created in unity. You can change the complete look of the calendar and create custom content for each day. All the assets I used are free (with attribution) and can be used by you. The resource code is available on &lt;a href="https://github.com/GamesAndCode/AdventCalendar2023"
+
+
+
+
+ target="_blank"
+ 
+
+
+>github&lt;/a> or as a Unity package in the &lt;a href="https://gameandcode.com/code"
+
+
+
+ 
+
+
+>code section&lt;/a>.&lt;br>
+This time I will not explain any code because I want to focus on the use of the advent calendar. Of course you can modify the code, but be aware that I built the advent calendar on top of a shop system. Therefore the code might be a bit over-engineered and sometimes a bit confusing. If you want to know more about the shop system I am building this project on, let me know so I can create a template and blog post for it.&lt;/p></description></item><item><title>Random position spawning</title><link>https://gameandcode.com/blog/objectspawner/</link><pubDate>Fri, 13 Oct 2023 05:00:00 +0000</pubDate><guid>https://gameandcode.com/blog/objectspawner/</guid><description>&lt;details class="table-of-content ">
  &lt;summary>
  
  Table of Contents

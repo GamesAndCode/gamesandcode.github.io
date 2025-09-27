@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tutorial on gameandcode</title>
+    <link>http://localhost:1313/de/categories/tutorial/</link>
+    <description>Recent content in Tutorial on gameandcode</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <lastBuildDate>Sun, 19 Nov 2023 05:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/de/categories/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Advent calendar template</title>
+      <link>http://localhost:1313/de/blog/adventcalendar2023/</link>
+      <pubDate>Sun, 19 Nov 2023 05:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/de/blog/adventcalendar2023/</guid>
+      <description>&lt;video&#xA;    width=&#34;100%&#34;&#xA;    height=&#34;auto&#34;&#xA;    &#xA;    &#xA;    &#xA;    controls&#xA;    &#xA;    class=&#34;rounded-lg&#34;&#xA;    style=&#34;max-width:100%&#34;&gt;&#xA;    &lt;source src=&#34;http://localhost:1313/videos/advent-calendar/AdventCalendarPreview.mp4&#34; type=&#34;video/mp4&#34; /&gt;&#xA;    Your browser does not support the video tag.&#xA;  &lt;/video&gt;&#xA;&#xA;&#xA;&lt;p class=text-center&gt;Advent calendar preview&lt;/p&gt;&#xD;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Hello fellow game developers!&lt;/strong&gt; This blog post will explain how to use an advent calendar template I created in unity. You can change the complete look of the calendar and create custom content for each day. All the assets I used are free (with attribution) and can be used by you. The resource code is available on &lt;a href=&#34;https://github.com/GamesAndCode/AdventCalendar2023&#34;&#xA;&#xA;&#xA;&#xA;&#xA; target=&#34;_blank&#34;&#xA; &#xA;&#xA;&#xA;&gt;github&lt;/a&gt; or as a Unity package in the &lt;a href=&#34;http://localhost:1313/code&#34;&#xA;&#xA;&#xA;&#xA; &#xA;&#xA;&#xA;&gt;code section&lt;/a&gt;.&lt;br&gt;&#xA;This time I will not explain any code because I want to focus on the use of the advent calendar. Of course you can modify the code, but be aware that I built the advent calendar on top of a shop system. Therefore the code might be a bit over-engineered and sometimes a bit confusing. If you want to know more about the shop system I am building this project on, let me know so I can create a template and blog post for it.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Random position spawning</title>
+      <link>http://localhost:1313/de/blog/objectspawner/</link>
+      <pubDate>Fri, 13 Oct 2023 05:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/de/blog/objectspawner/</guid>
+      <description>&lt;details class=&#34;table-of-content &#34;&gt;&#xA;  &lt;summary&gt;&#xA;    &#xA;      Table of Contents&#xA;    &#xA;  &lt;/summary&gt;&#xA;  &lt;nav id=&#34;TableOfContents&#34;&gt;&#xA;  &lt;ol&gt;&#xA;    &lt;li&gt;&lt;a href=&#34;#introduction&#34;&gt;Introduction&lt;/a&gt;&lt;/li&gt;&#xA;    &lt;li&gt;&lt;a href=&#34;#random-position-offscreen&#34;&gt;Random position offscreen&lt;/a&gt;&lt;/li&gt;&#xA;    &lt;li&gt;&lt;a href=&#34;#random-position-on-screen&#34;&gt;Random position on screen&lt;/a&gt;&lt;/li&gt;&#xA;    &lt;li&gt;&lt;a href=&#34;#and-now-you&#34;&gt;And now you!&lt;/a&gt;&lt;/li&gt;&#xA;  &lt;/ol&gt;&#xA;&lt;/nav&gt;&#xA;&lt;/details&gt;&#xA;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;One of the key elements that contributes to the interactivity of a game is the ability to seamlessly spawn objects into the game world. Whether it&amp;rsquo;s an enemy unit stepping out of the shadows, power-ups magically appearing, or obstacles falling from the sky, the art of spawning objects is a fundamental skill for game developers.&#xA;In this blog post I will explain how to spawn an object at a random position on or off the screen in Unity2D. You can download the code on &lt;a href=&#34;https://github.com/GamesAndCode/RandomSpawnPosition&#34;&#xA;&#xA;&#xA;&#xA;&#xA; target=&#34;_blank&#34;&#xA; &#xA;&#xA;&#xA;&gt;github&lt;/a&gt; or download a Unity package in the &lt;a href=&#34;http://localhost:1313/code&#34;&#xA;&#xA;&#xA;&#xA; &#xA;&#xA;&#xA;&gt;Code section&lt;/a&gt; to follow along. There is a class called &lt;a href=&#34;https://github.com/GamesAndCode/RandomSpawnPosition/blob/main/Assets/Scripts/Spawner.cs&#34;&#xA;&#xA;&#xA;&#xA;&#xA; target=&#34;_blank&#34;&#xA; &#xA;&#xA;&#xA;&gt;Spawner&lt;/a&gt; that is associated with a game object in the scene. You can use it to play around with the different methods.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

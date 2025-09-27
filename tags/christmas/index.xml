@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Christmas on GameAndCode</title><link>https://gameandcode.com/tags/christmas/</link><description>Recent content in Christmas on GameAndCode</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sun, 19 Nov 2023 05:00:00 +0000</lastBuildDate><atom:link href="https://gameandcode.com/tags/christmas/index.xml" rel="self" type="application/rss+xml"/><item><title>Advent calendar template</title><link>https://gameandcode.com/blog/adventcalendar2023/</link><pubDate>Sun, 19 Nov 2023 05:00:00 +0000</pubDate><guid>https://gameandcode.com/blog/adventcalendar2023/</guid><description>&lt;video
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Christmas on gameandcode</title><link>https://gameandcode.com/tags/christmas/</link><description>Recent content in Christmas on gameandcode</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sun, 19 Nov 2023 05:00:00 +0000</lastBuildDate><atom:link href="https://gameandcode.com/tags/christmas/index.xml" rel="self" type="application/rss+xml"/><item><title>Advent calendar template</title><link>https://gameandcode.com/blog/adventcalendar2023/</link><pubDate>Sun, 19 Nov 2023 05:00:00 +0000</pubDate><guid>https://gameandcode.com/blog/adventcalendar2023/</guid><description>&lt;video
  width="100%"
  height="auto"
  
@@ -13,4 +13,23 @@
  &lt;/video>
 
 
-&lt;p class=text-center>Advent calendar preview&lt;/p></description></item></channel></rss>
+&lt;p class=text-center>Advent calendar preview&lt;/p>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>&lt;strong>Hello fellow game developers!&lt;/strong> This blog post will explain how to use an advent calendar template I created in unity. You can change the complete look of the calendar and create custom content for each day. All the assets I used are free (with attribution) and can be used by you. The resource code is available on &lt;a href="https://github.com/GamesAndCode/AdventCalendar2023"
+
+
+
+
+ target="_blank"
+ 
+
+
+>github&lt;/a> or as a Unity package in the &lt;a href="https://gameandcode.com/code"
+
+
+
+ 
+
+
+>code section&lt;/a>.&lt;br>
+This time I will not explain any code because I want to focus on the use of the advent calendar. Of course you can modify the code, but be aware that I built the advent calendar on top of a shop system. Therefore the code might be a bit over-engineered and sometimes a bit confusing. If you want to know more about the shop system I am building this project on, let me know so I can create a template and blog post for it.&lt;/p></description></item></channel></rss>
