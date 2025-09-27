@@ -12574,8 +12574,9 @@ input#nav-toggle:checked ~ #nav-menu {
       margin: 0 auto 24px auto;
       /* Prevent .portfolio img from affecting this image */ }
       .custom-home-style .portfolio .home-picture img {
-        max-width: auto;
-        border-radius: 5;
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
         display: block;
         margin: 0 auto;
         transition: transform 0.3s cubic-bezier(0.39, 0.575, 0.565, 1), box-shadow 0.3s; }
