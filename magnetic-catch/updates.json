@@ -1,0 +1,9 @@
+{
+  "updates": [
+    {
+      "version": "1.0.4",
+      "title": "Magnetic Catch Demo v1.0.4",
+      "content": "Small update on the demo with mostly quality of life implementations :)\n\n**General**\n\n- Sell All Button: Added a button to quickly sell all cleaned items.\n- Bug Fix: Fixed an issue where the bicycle didn't show up in the craftable tab (Notebook).\n- Audio: New music tracks added to two environments! 🎵\n- UI: Added a scroll view for when your inventory gets too full.\n\n**Minigame**\n\n- Visual Polish: Fixed the pull bar so it no longer clips outside of its container.\n- QoL: The \"perfect hit\" area is now clearly visible.\n\n**Skill Tree**\n\n- Upgrade 1: Added a skill that helps you get those last remaining legendary items.\n- Upgrade 2: Perfect hits now reward you with stamina.\n\n**Localization**\n\n- Spanish: Spanish translations are now live! Special thanks to FRAGMENTEDBRAIN (check out the Credits).\n\nIf you have any other feedback, feel free to comment below or consider leaving the game a review!\n\nHave a great catch! 🧲🎣"
+    }
+  ]
+}
