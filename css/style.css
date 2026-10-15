@@ -10887,8 +10887,12 @@ input#nav-toggle:checked ~ #nav-menu {
       text-align: center;
       border-radius: 12px; }
   .custom-home-style .game-grid {
-    display: flex;
-    gap: 24px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 340px;
+    grid-template-rows: auto auto 1fr auto auto;
+    column-gap: 24px;
+    row-gap: 0;
     overflow-x: auto;
     overflow-y: clip;
     padding: 4px 4px 18px;
@@ -10903,9 +10907,23 @@ input#nav-toggle:checked ~ #nav-menu {
       background: #0891b2;
       border-radius: 4px; }
     .custom-home-style .game-grid .game-entry {
-      flex: 0 0 340px;
       margin: 0;
-      max-width: none; }
+      max-width: none;
+      grid-row: span 5;
+      display: grid;
+      grid-template-rows: subgrid; }
+      .custom-home-style .game-grid .game-entry > .home-picture {
+        grid-row: 1; }
+      .custom-home-style .game-grid .game-entry > h3 {
+        grid-row: 2; }
+      .custom-home-style .game-grid .game-entry > p:not(.funded-by) {
+        grid-row: 3; }
+      .custom-home-style .game-grid .game-entry > .funded-by {
+        grid-row: 4; }
+      .custom-home-style .game-grid .game-entry > .game-links {
+        grid-row: 5;
+        align-self: start;
+        margin-top: 0; }
   .custom-home-style .game-entry {
     max-width: 740px;
     margin: 40px auto;
